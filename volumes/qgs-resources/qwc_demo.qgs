@@ -43,38 +43,38 @@
           <Option name="wmsTitle" type="QString" value="Edit Demo"/>
         </Option>
       </customproperties>
-      <layer-tree-layer name="Edit Points" checked="Qt::Checked" legend_split_behavior="0" id="edit_points20180725103532838" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' sslmode=disable key='id' srid=3857 type=Point checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;edit_points&quot; (geom)" legend_exp="">
+      <layer-tree-layer name="Edit Points" checked="Qt::Checked" legend_split_behavior="0" id="edit_points20180725103532838" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' key='id' srid=3857 type=Point checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;edit_points&quot; (geom)" legend_exp="">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer name="Edit Lines" checked="Qt::Checked" legend_split_behavior="0" id="edit_lines20180725105228809" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' sslmode=disable key='id' srid=3857 type=LineString checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;edit_lines&quot; (geom)" legend_exp="">
+      <layer-tree-layer name="Edit Lines" checked="Qt::Checked" legend_split_behavior="0" id="edit_lines20180725105228809" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' key='id' srid=3857 type=LineString checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;edit_lines&quot; (geom)" legend_exp="">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer name="Edit Polygons" checked="Qt::Checked" legend_split_behavior="0" id="edit_polygons20180725105236187" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' sslmode=disable key='id' srid=3857 type=Polygon checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;edit_polygons&quot; (geom)" legend_exp="">
+      <layer-tree-layer name="Edit Polygons" checked="Qt::Checked" legend_split_behavior="0" id="edit_polygons20180725105236187" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' key='id' srid=3857 type=Polygon checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;edit_polygons&quot; (geom)" legend_exp="">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-layer name="Geographic lines" checked="Qt::Checked" legend_split_behavior="0" id="ne_10m_geographic_lines20180710104138901" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' sslmode=disable key='ogc_fid' srid=3857 type=MultiLineString checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_geographic_lines&quot; (wkb_geometry) sql=&quot;featurecla&quot; = 'Circle of latitude'" legend_exp="">
+    <layer-tree-layer name="Geographic lines" checked="Qt::Checked" legend_split_behavior="0" id="ne_10m_geographic_lines20180710104138901" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' key='ogc_fid' srid=3857 type=MultiLineString checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_geographic_lines&quot; (wkb_geometry) sql=&quot;featurecla&quot; = 'Circle of latitude'" legend_exp="">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer name="Country names" checked="Qt::Checked" legend_split_behavior="0" id="ne_10m_admin_0_country_points20180710104138887" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' sslmode=disable key='ogc_fid' srid=3857 type=Point checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_admin_0_country_points&quot; (wkb_geometry)" legend_exp="">
+    <layer-tree-layer name="Country names" checked="Qt::Checked" legend_split_behavior="0" id="ne_10m_admin_0_country_points20180710104138887" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' key='ogc_fid' srid=3857 type=Point checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_admin_0_country_points&quot; (wkb_geometry)" legend_exp="">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer name="States and Provinces" checked="Qt::Checked" legend_split_behavior="0" id="ne_10m_admin_1_states_provinces_lines20180710104138894" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' sslmode=disable key='ogc_fid' srid=3857 type=MultiLineString checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_admin_1_states_provinces_lines&quot; (wkb_geometry)" legend_exp="">
+    <layer-tree-layer name="States and Provinces" checked="Qt::Checked" legend_split_behavior="0" id="ne_10m_admin_1_states_provinces_lines20180710104138894" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' key='ogc_fid' srid=3857 type=MultiLineString checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_admin_1_states_provinces_lines&quot; (wkb_geometry)" legend_exp="">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer name="Countries" checked="Qt::Checked" legend_split_behavior="0" id="ne_10m_admin_0_countries20180710104138875" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' sslmode=disable key='ogc_fid' srid=3857 type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_admin_0_countries&quot; (wkb_geometry)" legend_exp="">
+    <layer-tree-layer name="Countries" checked="Qt::Checked" legend_split_behavior="0" id="ne_10m_admin_0_countries20180710104138875" providerKey="postgres" patch_size="0,0" expanded="1" source="service='qwc_geodb' key='ogc_fid' srid=3857 type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_admin_0_countries&quot; (wkb_geometry)" legend_exp="">
       <customproperties>
         <Option/>
       </customproperties>
@@ -745,7 +745,7 @@
         <ymax>47.37754356322062677</ymax>
       </wgs84extent>
       <id>edit_lines20180725105228809</id>
-      <datasource>service='qwc_geodb' sslmode=disable key='id' srid=3857 type=LineString checkPrimaryKeyUnicity='1' table="qwc_geodb"."edit_lines" (geom)</datasource>
+      <datasource>service='qwc_geodb' key='id' srid=3857 type=LineString checkPrimaryKeyUnicity='1' table="qwc_geodb"."edit_lines" (geom)</datasource>
       <shortname>edit_lines</shortname>
       <title>Edit Lines</title>
       <keywordList>
@@ -1469,7 +1469,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>52.83169801701878043</ymax>
       </wgs84extent>
       <id>edit_points20180725103532838</id>
-      <datasource>service='qwc_geodb' sslmode=disable key='id' srid=3857 type=Point checkPrimaryKeyUnicity='1' table="qwc_geodb"."edit_points" (geom)</datasource>
+      <datasource>service='qwc_geodb' key='id' srid=3857 type=Point checkPrimaryKeyUnicity='1' table="qwc_geodb"."edit_points" (geom)</datasource>
       <shortname>edit_points</shortname>
       <title>Edit Points</title>
       <keywordList>
@@ -2301,7 +2301,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>53.26746492354692464</ymax>
       </wgs84extent>
       <id>edit_polygons20180725105236187</id>
-      <datasource>service='qwc_geodb' sslmode=disable key='id' srid=3857 type=Polygon checkPrimaryKeyUnicity='1' table="qwc_geodb"."edit_polygons" (geom)</datasource>
+      <datasource>service='qwc_geodb' key='id' srid=3857 type=Polygon checkPrimaryKeyUnicity='1' table="qwc_geodb"."edit_polygons" (geom)</datasource>
       <shortname>edit_polygons</shortname>
       <title>Edit Polygons</title>
       <keywordList>
@@ -2999,7 +2999,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>83.63410065300008966</ymax>
       </wgs84extent>
       <id>ne_10m_admin_0_countries20180710104138875</id>
-      <datasource>service='qwc_geodb' sslmode=disable key='ogc_fid' srid=3857 type=MultiPolygon checkPrimaryKeyUnicity='1' table="qwc_geodb"."ne_10m_admin_0_countries" (wkb_geometry)</datasource>
+      <datasource>service='qwc_geodb' key='ogc_fid' srid=3857 type=MultiPolygon checkPrimaryKeyUnicity='1' table="qwc_geodb"."ne_10m_admin_0_countries" (wkb_geometry)</datasource>
       <shortname>countries</shortname>
       <title>Countries</title>
       <keywordList>
@@ -5365,7 +5365,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>73.34886936285137438</ymax>
       </wgs84extent>
       <id>ne_10m_admin_0_country_points20180710104138887</id>
-      <datasource>service='qwc_geodb' sslmode=disable key='ogc_fid' srid=3857 type=Point checkPrimaryKeyUnicity='1' table="qwc_geodb"."ne_10m_admin_0_country_points" (wkb_geometry)</datasource>
+      <datasource>service='qwc_geodb' key='ogc_fid' srid=3857 type=Point checkPrimaryKeyUnicity='1' table="qwc_geodb"."ne_10m_admin_0_country_points" (wkb_geometry)</datasource>
       <shortname>country_names</shortname>
       <title>Country names</title>
       <keywordList>
@@ -6349,7 +6349,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>81.12853131646703275</ymax>
       </wgs84extent>
       <id>ne_10m_admin_1_states_provinces_lines20180710104138894</id>
-      <datasource>service='qwc_geodb' sslmode=disable key='ogc_fid' srid=3857 type=MultiLineString checkPrimaryKeyUnicity='1' table="qwc_geodb"."ne_10m_admin_1_states_provinces_lines" (wkb_geometry)</datasource>
+      <datasource>service='qwc_geodb' key='ogc_fid' srid=3857 type=MultiLineString checkPrimaryKeyUnicity='1' table="qwc_geodb"."ne_10m_admin_1_states_provinces_lines" (wkb_geometry)</datasource>
       <shortname>states_provinces</shortname>
       <title>States and Provinces</title>
       <keywordList>
@@ -7139,7 +7139,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>66.54998524120267689</ymax>
       </wgs84extent>
       <id>ne_10m_geographic_lines20180710104138901</id>
-      <datasource>service='qwc_geodb' sslmode=disable key='ogc_fid' srid=3857 type=MultiLineString checkPrimaryKeyUnicity='1' table="qwc_geodb"."ne_10m_geographic_lines" (wkb_geometry) sql="featurecla" = 'Circle of latitude'</datasource>
+      <datasource>service='qwc_geodb' key='ogc_fid' srid=3857 type=MultiLineString checkPrimaryKeyUnicity='1' table="qwc_geodb"."ne_10m_geographic_lines" (wkb_geometry) sql="featurecla" = 'Circle of latitude'</datasource>
       <shortname>geographic_lines</shortname>
       <title>Geographic lines</title>
       <keywordList>
@@ -9177,7 +9177,7 @@ def my_form_open(dialog, layer, feature):
           <Option name="atlasRasterFormat" type="QString" value="png"/>
         </Option>
       </customproperties>
-      <Atlas coverageLayer="ne_10m_admin_0_countries20180710104138875" coverageLayerSource="service='qwc_geodb' sslmode=disable key='ogc_fid' srid=3857 type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_admin_0_countries&quot; (wkb_geometry)" sortFeatures="0" enabled="1" coverageLayerProvider="postgres" hideCoverage="0" filenamePattern="'output_'||@atlas_featurenumber" coverageLayerName="Countries" filterFeatures="0" pageNameExpression="&quot;name&quot;"/>
+      <Atlas coverageLayer="ne_10m_admin_0_countries20180710104138875" coverageLayerSource="service='qwc_geodb' key='ogc_fid' srid=3857 type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;qwc_geodb&quot;.&quot;ne_10m_admin_0_countries&quot; (wkb_geometry)" sortFeatures="0" enabled="1" coverageLayerProvider="postgres" hideCoverage="0" filenamePattern="'output_'||@atlas_featurenumber" coverageLayerName="Countries" filterFeatures="0" pageNameExpression="&quot;name&quot;"/>
     </Layout>
   </Layouts>
   <mapViewDocks3D/>
