@@ -1,24 +1,29 @@
 {
-  "routingServiceUrl": "https://valhalla1.openstreetmap.de/",
-  "omitUrlParameterUpdates":false,
-  "urlPositionFormat":"centerAndZoom",
-  "urlPositionCrs":"",
-  "preserveBackgroundOnThemeSwitch":true,
-  "preserveExtentOnThemeSwitch":true,
-  "preserveNonThemeLayersOnThemeSwitch":false,
   "allowAddingOtherThemes":true,
+  "allowFractionalZoom":false,
   "allowLayerTreeSeparators":false,
   "allowRemovingThemeLayers":true,
   "allowReorderingLayers":true,
-  "preventSplittingGroupsWhenReordering":false,
+  "availableLocales": {
+    "en-US": "English",
+    "de-CH": "Deutsch",
+    "fr-FR": "Français",
+    "it-IT": "Italiano"
+  },
   "globallyDisableDockableDialogs":false,
-  "searchThemes":true,
-  "allowFractionalZoom":false,
-  "localeAwareNumbers":false,
   "identifyTool":"Identify",
+  "localeAwareNumbers":false,
+  "omitUrlParameterUpdates":false,
+  "preserveBackgroundOnThemeSwitch":true,
+  "preserveExtentOnThemeSwitch":true,
+  "preserveNonThemeLayersOnThemeSwitch":false,
+  "preventSplittingGroupsWhenReordering":false,
+  "routingServiceUrl": "https://valhalla1.openstreetmap.de/",
+  "searchThemes":true,
+  "urlPositionFormat":"centerAndZoom",
+  "urlPositionCrs":"",
   "wmsDpi":96,
   "wmsHidpi":false,
-  "qgisServerVersion":3,
   "defaultFeatureStyle":{
     "strokeColor":[
       0,
@@ -268,24 +273,6 @@
       {
         "name":"Settings",
         "cfg":{
-          "languages":[
-            {
-              "title":"English",
-              "value":"en-US"
-            },
-            {
-              "title":"Deutsch",
-              "value":"de-CH"
-            },
-            {
-              "title":"Français",
-              "value":"fr-FR"
-            },
-            {
-              "title":"Italiano",
-              "value":"it-IT"
-            }
-          ],
           "colorSchemes":[
             {
               "titleMsgId":"colorschemes.default",
