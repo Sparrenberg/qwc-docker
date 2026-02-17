@@ -4,7 +4,8 @@
   "config": {
     "data_service_url": "/api/v1/data/",
     "skip_empty_attributes": false,
-    "default_qgis_server_url": "http://qwc-qgis-server/ows/"
+    "default_qgis_server_url": "http://qwc-qgis-server/ows/",
+    "qgis_server_url_tenant_suffix": ""
   },
   "resources": {
     "wms_services": [
@@ -23,37 +24,48 @@
                   "title": "Edit Points",
                   "attributes": [
                     {
-                      "name": "id"
+                      "name": "id",
+                      "alias": "id"
                     },
                     {
-                      "name": "Name"
+                      "name": "name",
+                      "alias": "Name"
                     },
                     {
-                      "name": "Description"
+                      "name": "description",
+                      "alias": "Description"
                     },
                     {
-                      "name": "Number"
+                      "name": "num",
+                      "alias": "Number"
                     },
                     {
-                      "name": "value"
+                      "name": "value",
+                      "alias": "value"
                     },
                     {
-                      "name": "Type"
+                      "name": "type",
+                      "alias": "Type"
                     },
                     {
-                      "name": "amount"
+                      "name": "amount",
+                      "alias": "amount"
                     },
                     {
-                      "name": "Validated"
+                      "name": "validated",
+                      "alias": "Validated"
                     },
                     {
-                      "name": "Date"
+                      "name": "datetime",
+                      "alias": "Date"
                     },
                     {
-                      "name": "geometry"
+                      "name": "geometry",
+                      "alias": "geometry"
                     },
                     {
-                      "name": "maptip"
+                      "name": "maptip",
+                      "alias": "maptip"
                     }
                   ],
                   "display_field": "Name"
@@ -63,37 +75,48 @@
                   "title": "Edit Lines",
                   "attributes": [
                     {
-                      "name": "id"
+                      "name": "id",
+                      "alias": "id"
                     },
                     {
-                      "name": "Name"
+                      "name": "name",
+                      "alias": "Name"
                     },
                     {
-                      "name": "Description"
+                      "name": "description",
+                      "alias": "Description"
                     },
                     {
-                      "name": "Number"
+                      "name": "num",
+                      "alias": "Number"
                     },
                     {
-                      "name": "value"
+                      "name": "value",
+                      "alias": "value"
                     },
                     {
-                      "name": "Type"
+                      "name": "type",
+                      "alias": "Type"
                     },
                     {
-                      "name": "amount"
+                      "name": "amount",
+                      "alias": "amount"
                     },
                     {
-                      "name": "Validated"
+                      "name": "validated",
+                      "alias": "Validated"
                     },
                     {
-                      "name": "Date"
+                      "name": "datetime",
+                      "alias": "Date"
                     },
                     {
-                      "name": "geometry"
+                      "name": "geometry",
+                      "alias": "geometry"
                     },
                     {
-                      "name": "maptip"
+                      "name": "maptip",
+                      "alias": "maptip"
                     }
                   ],
                   "display_field": "Name"
@@ -103,37 +126,48 @@
                   "title": "Edit Polygons",
                   "attributes": [
                     {
-                      "name": "id"
+                      "name": "id",
+                      "alias": "id"
                     },
                     {
-                      "name": "Name"
+                      "name": "name",
+                      "alias": "Name"
                     },
                     {
-                      "name": "Description"
+                      "name": "description",
+                      "alias": "Description"
                     },
                     {
-                      "name": "Number"
+                      "name": "num",
+                      "alias": "Number"
                     },
                     {
-                      "name": "value"
+                      "name": "value",
+                      "alias": "value"
                     },
                     {
-                      "name": "Type"
+                      "name": "type",
+                      "alias": "Type"
                     },
                     {
-                      "name": "amount"
+                      "name": "amount",
+                      "alias": "amount"
                     },
                     {
-                      "name": "Validated"
+                      "name": "validated",
+                      "alias": "Validated"
                     },
                     {
-                      "name": "Date"
+                      "name": "datetime",
+                      "alias": "Date"
                     },
                     {
-                      "name": "geometry"
+                      "name": "geometry",
+                      "alias": "geometry"
                     },
                     {
-                      "name": "maptip"
+                      "name": "maptip",
+                      "alias": "maptip"
                     }
                   ],
                   "display_field": "Name"
@@ -145,106 +179,140 @@
               "title": "Geographic lines",
               "attributes": [
                 {
-                  "name": "ogc_fid"
+                  "name": "ogc_fid",
+                  "alias": "ogc_fid"
                 },
                 {
-                  "name": "scalerank"
+                  "name": "scalerank",
+                  "alias": "scalerank"
                 },
                 {
-                  "name": "name"
+                  "name": "name",
+                  "alias": "name"
                 },
                 {
-                  "name": "name_long"
+                  "name": "name_long",
+                  "alias": "name_long"
                 },
                 {
-                  "name": "abbrev"
+                  "name": "abbrev",
+                  "alias": "abbrev"
                 },
                 {
-                  "name": "note"
+                  "name": "note",
+                  "alias": "note"
                 },
                 {
-                  "name": "featurecla"
+                  "name": "featurecla",
+                  "alias": "featurecla"
                 },
                 {
-                  "name": "min_zoom"
+                  "name": "min_zoom",
+                  "alias": "min_zoom"
                 },
                 {
-                  "name": "wikidataid"
+                  "name": "wikidataid",
+                  "alias": "wikidataid"
                 },
                 {
-                  "name": "name_ar"
+                  "name": "name_ar",
+                  "alias": "name_ar"
                 },
                 {
-                  "name": "name_bn"
+                  "name": "name_bn",
+                  "alias": "name_bn"
                 },
                 {
-                  "name": "name_de"
+                  "name": "name_de",
+                  "alias": "name_de"
                 },
                 {
-                  "name": "name_en"
+                  "name": "name_en",
+                  "alias": "name_en"
                 },
                 {
-                  "name": "name_es"
+                  "name": "name_es",
+                  "alias": "name_es"
                 },
                 {
-                  "name": "name_fr"
+                  "name": "name_fr",
+                  "alias": "name_fr"
                 },
                 {
-                  "name": "name_el"
+                  "name": "name_el",
+                  "alias": "name_el"
                 },
                 {
-                  "name": "name_hi"
+                  "name": "name_hi",
+                  "alias": "name_hi"
                 },
                 {
-                  "name": "name_hu"
+                  "name": "name_hu",
+                  "alias": "name_hu"
                 },
                 {
-                  "name": "name_id"
+                  "name": "name_id",
+                  "alias": "name_id"
                 },
                 {
-                  "name": "name_it"
+                  "name": "name_it",
+                  "alias": "name_it"
                 },
                 {
-                  "name": "name_ja"
+                  "name": "name_ja",
+                  "alias": "name_ja"
                 },
                 {
-                  "name": "name_ko"
+                  "name": "name_ko",
+                  "alias": "name_ko"
                 },
                 {
-                  "name": "name_nl"
+                  "name": "name_nl",
+                  "alias": "name_nl"
                 },
                 {
-                  "name": "name_pl"
+                  "name": "name_pl",
+                  "alias": "name_pl"
                 },
                 {
-                  "name": "name_pt"
+                  "name": "name_pt",
+                  "alias": "name_pt"
                 },
                 {
-                  "name": "name_ru"
+                  "name": "name_ru",
+                  "alias": "name_ru"
                 },
                 {
-                  "name": "name_sv"
+                  "name": "name_sv",
+                  "alias": "name_sv"
                 },
                 {
-                  "name": "name_tr"
+                  "name": "name_tr",
+                  "alias": "name_tr"
                 },
                 {
-                  "name": "name_vi"
+                  "name": "name_vi",
+                  "alias": "name_vi"
                 },
                 {
-                  "name": "name_zh"
+                  "name": "name_zh",
+                  "alias": "name_zh"
                 },
                 {
-                  "name": "wdid_score"
+                  "name": "wdid_score",
+                  "alias": "wdid_score"
                 },
                 {
-                  "name": "ne_id"
+                  "name": "ne_id",
+                  "alias": "ne_id"
                 },
                 {
-                  "name": "geometry"
+                  "name": "geometry",
+                  "alias": "geometry"
                 },
                 {
-                  "name": "maptip"
+                  "name": "maptip",
+                  "alias": "maptip"
                 }
               ],
               "display_field": "name"
@@ -254,97 +322,128 @@
               "title": "Country names",
               "attributes": [
                 {
-                  "name": "ogc_fid"
+                  "name": "ogc_fid",
+                  "alias": "ogc_fid"
                 },
                 {
-                  "name": "scalerank"
+                  "name": "scalerank",
+                  "alias": "scalerank"
                 },
                 {
-                  "name": "labelrank"
+                  "name": "labelrank",
+                  "alias": "labelrank"
                 },
                 {
-                  "name": "z_postal"
+                  "name": "z_postal",
+                  "alias": "z_postal"
                 },
                 {
-                  "name": "z_abbrev"
+                  "name": "z_abbrev",
+                  "alias": "z_abbrev"
                 },
                 {
-                  "name": "z_name"
+                  "name": "z_name",
+                  "alias": "z_name"
                 },
                 {
-                  "name": "z_admin"
+                  "name": "z_admin",
+                  "alias": "z_admin"
                 },
                 {
-                  "name": "featurecla"
+                  "name": "featurecla",
+                  "alias": "featurecla"
                 },
                 {
-                  "name": "sovereignt"
+                  "name": "sovereignt",
+                  "alias": "sovereignt"
                 },
                 {
-                  "name": "sov_a3"
+                  "name": "sov_a3",
+                  "alias": "sov_a3"
                 },
                 {
-                  "name": "adm0_dif"
+                  "name": "adm0_dif",
+                  "alias": "adm0_dif"
                 },
                 {
-                  "name": "level"
+                  "name": "level",
+                  "alias": "level"
                 },
                 {
-                  "name": "type"
+                  "name": "type",
+                  "alias": "type"
                 },
                 {
-                  "name": "admin"
+                  "name": "admin",
+                  "alias": "admin"
                 },
                 {
-                  "name": "adm0_a3"
+                  "name": "adm0_a3",
+                  "alias": "adm0_a3"
                 },
                 {
-                  "name": "geou_dif"
+                  "name": "geou_dif",
+                  "alias": "geou_dif"
                 },
                 {
-                  "name": "name"
+                  "name": "name",
+                  "alias": "name"
                 },
                 {
-                  "name": "abbrev"
+                  "name": "abbrev",
+                  "alias": "abbrev"
                 },
                 {
-                  "name": "postal"
+                  "name": "postal",
+                  "alias": "postal"
                 },
                 {
-                  "name": "name_forma"
+                  "name": "name_forma",
+                  "alias": "name_forma"
                 },
                 {
-                  "name": "terr_"
+                  "name": "terr_",
+                  "alias": "terr_"
                 },
                 {
-                  "name": "name_sort"
+                  "name": "name_sort",
+                  "alias": "name_sort"
                 },
                 {
-                  "name": "map_color"
+                  "name": "map_color",
+                  "alias": "map_color"
                 },
                 {
-                  "name": "pop_est"
+                  "name": "pop_est",
+                  "alias": "pop_est"
                 },
                 {
-                  "name": "gdp_md_est"
+                  "name": "gdp_md_est",
+                  "alias": "gdp_md_est"
                 },
                 {
-                  "name": "fips_10_"
+                  "name": "fips_10_",
+                  "alias": "fips_10_"
                 },
                 {
-                  "name": "iso_a2"
+                  "name": "iso_a2",
+                  "alias": "iso_a2"
                 },
                 {
-                  "name": "iso_a3"
+                  "name": "iso_a3",
+                  "alias": "iso_a3"
                 },
                 {
-                  "name": "iso_n3"
+                  "name": "iso_n3",
+                  "alias": "iso_n3"
                 },
                 {
-                  "name": "geometry"
+                  "name": "geometry",
+                  "alias": "geometry"
                 },
                 {
-                  "name": "maptip"
+                  "name": "maptip",
+                  "alias": "maptip"
                 }
               ],
               "display_field": "z_name"
@@ -354,55 +453,72 @@
               "title": "States and Provinces",
               "attributes": [
                 {
-                  "name": "featurecla"
+                  "name": "featurecla",
+                  "alias": "featurecla"
                 },
                 {
-                  "name": "name"
+                  "name": "name",
+                  "alias": "name"
                 },
                 {
-                  "name": "adm0_a3"
+                  "name": "adm0_a3",
+                  "alias": "adm0_a3"
                 },
                 {
-                  "name": "adm0_name"
+                  "name": "adm0_name",
+                  "alias": "adm0_name"
                 },
                 {
-                  "name": "sov_a3"
+                  "name": "sov_a3",
+                  "alias": "sov_a3"
                 },
                 {
-                  "name": "name_l"
+                  "name": "name_l",
+                  "alias": "name_l"
                 },
                 {
-                  "name": "name_r"
+                  "name": "name_r",
+                  "alias": "name_r"
                 },
                 {
-                  "name": "name_alt_l"
+                  "name": "name_alt_l",
+                  "alias": "name_alt_l"
                 },
                 {
-                  "name": "name_alt_r"
+                  "name": "name_alt_r",
+                  "alias": "name_alt_r"
                 },
                 {
-                  "name": "name_loc_l"
+                  "name": "name_loc_l",
+                  "alias": "name_loc_l"
                 },
                 {
-                  "name": "name_loc_r"
+                  "name": "name_loc_r",
+                  "alias": "name_loc_r"
                 },
                 {
-                  "name": "name_len_l"
+                  "name": "name_len_l",
+                  "alias": "name_len_l"
                 },
                 {
-                  "name": "name_len_r"
+                  "name": "name_len_r",
+                  "alias": "name_len_r"
                 },
                 {
-                  "name": "note"
+                  "name": "note",
+                  "alias": "note"
                 },
                 {
-                  "name": "type"
+                  "name": "type",
+                  "alias": "type"
                 },
                 {
-                  "name": "geometry"
+                  "name": "geometry",
+                  "alias": "geometry"
                 },
                 {
-                  "name": "maptip"
+                  "name": "maptip",
+                  "alias": "maptip"
                 }
               ],
               "display_field": "name"
@@ -412,265 +528,352 @@
               "title": "Countries",
               "attributes": [
                 {
-                  "name": "featurecla"
+                  "name": "featurecla",
+                  "alias": "featurecla"
                 },
                 {
-                  "name": "sovereignt"
+                  "name": "sovereignt",
+                  "alias": "sovereignt"
                 },
                 {
-                  "name": "sov_a3"
+                  "name": "sov_a3",
+                  "alias": "sov_a3"
                 },
                 {
-                  "name": "adm0_dif"
+                  "name": "adm0_dif",
+                  "alias": "adm0_dif"
                 },
                 {
-                  "name": "level"
+                  "name": "level",
+                  "alias": "level"
                 },
                 {
-                  "name": "type"
+                  "name": "type",
+                  "alias": "type"
                 },
                 {
-                  "name": "admin"
+                  "name": "admin",
+                  "alias": "admin"
                 },
                 {
-                  "name": "adm0_a3"
+                  "name": "adm0_a3",
+                  "alias": "adm0_a3"
                 },
                 {
-                  "name": "geou_dif"
+                  "name": "geou_dif",
+                  "alias": "geou_dif"
                 },
                 {
-                  "name": "geounit"
+                  "name": "geounit",
+                  "alias": "geounit"
                 },
                 {
-                  "name": "gu_a3"
+                  "name": "gu_a3",
+                  "alias": "gu_a3"
                 },
                 {
-                  "name": "su_dif"
+                  "name": "su_dif",
+                  "alias": "su_dif"
                 },
                 {
-                  "name": "subunit"
+                  "name": "subunit",
+                  "alias": "subunit"
                 },
                 {
-                  "name": "su_a3"
+                  "name": "su_a3",
+                  "alias": "su_a3"
                 },
                 {
-                  "name": "brk_diff"
+                  "name": "brk_diff",
+                  "alias": "brk_diff"
                 },
                 {
-                  "name": "name"
+                  "name": "name",
+                  "alias": "name"
                 },
                 {
-                  "name": "name_long"
+                  "name": "name_long",
+                  "alias": "name_long"
                 },
                 {
-                  "name": "brk_a3"
+                  "name": "brk_a3",
+                  "alias": "brk_a3"
                 },
                 {
-                  "name": "brk_name"
+                  "name": "brk_name",
+                  "alias": "brk_name"
                 },
                 {
-                  "name": "brk_group"
+                  "name": "brk_group",
+                  "alias": "brk_group"
                 },
                 {
-                  "name": "abbrev"
+                  "name": "abbrev",
+                  "alias": "abbrev"
                 },
                 {
-                  "name": "postal"
+                  "name": "postal",
+                  "alias": "postal"
                 },
                 {
-                  "name": "formal_en"
+                  "name": "formal_en",
+                  "alias": "formal_en"
                 },
                 {
-                  "name": "formal_fr"
+                  "name": "formal_fr",
+                  "alias": "formal_fr"
                 },
                 {
-                  "name": "name_ciawf"
+                  "name": "name_ciawf",
+                  "alias": "name_ciawf"
                 },
                 {
-                  "name": "note_adm0"
+                  "name": "note_adm0",
+                  "alias": "note_adm0"
                 },
                 {
-                  "name": "note_brk"
+                  "name": "note_brk",
+                  "alias": "note_brk"
                 },
                 {
-                  "name": "name_sort"
+                  "name": "name_sort",
+                  "alias": "name_sort"
                 },
                 {
-                  "name": "name_alt"
+                  "name": "name_alt",
+                  "alias": "name_alt"
                 },
                 {
-                  "name": "pop_est"
+                  "name": "pop_est",
+                  "alias": "pop_est"
                 },
                 {
-                  "name": "pop_rank"
+                  "name": "pop_rank",
+                  "alias": "pop_rank"
                 },
                 {
-                  "name": "gdp_md_est"
+                  "name": "gdp_md_est",
+                  "alias": "gdp_md_est"
                 },
                 {
-                  "name": "pop_year"
+                  "name": "pop_year",
+                  "alias": "pop_year"
                 },
                 {
-                  "name": "lastcensus"
+                  "name": "lastcensus",
+                  "alias": "lastcensus"
                 },
                 {
-                  "name": "gdp_year"
+                  "name": "gdp_year",
+                  "alias": "gdp_year"
                 },
                 {
-                  "name": "economy"
+                  "name": "economy",
+                  "alias": "economy"
                 },
                 {
-                  "name": "income_grp"
+                  "name": "income_grp",
+                  "alias": "income_grp"
                 },
                 {
-                  "name": "wikipedia"
+                  "name": "wikipedia",
+                  "alias": "wikipedia"
                 },
                 {
-                  "name": "fips_10_"
+                  "name": "fips_10_",
+                  "alias": "fips_10_"
                 },
                 {
-                  "name": "iso_a2"
+                  "name": "iso_a2",
+                  "alias": "iso_a2"
                 },
                 {
-                  "name": "iso_a3"
+                  "name": "iso_a3",
+                  "alias": "iso_a3"
                 },
                 {
-                  "name": "iso_a3_eh"
+                  "name": "iso_a3_eh",
+                  "alias": "iso_a3_eh"
                 },
                 {
-                  "name": "iso_n3"
+                  "name": "iso_n3",
+                  "alias": "iso_n3"
                 },
                 {
-                  "name": "un_a3"
+                  "name": "un_a3",
+                  "alias": "un_a3"
                 },
                 {
-                  "name": "wb_a2"
+                  "name": "wb_a2",
+                  "alias": "wb_a2"
                 },
                 {
-                  "name": "wb_a3"
+                  "name": "wb_a3",
+                  "alias": "wb_a3"
                 },
                 {
-                  "name": "woe_id"
+                  "name": "woe_id",
+                  "alias": "woe_id"
                 },
                 {
-                  "name": "woe_id_eh"
+                  "name": "woe_id_eh",
+                  "alias": "woe_id_eh"
                 },
                 {
-                  "name": "woe_note"
+                  "name": "woe_note",
+                  "alias": "woe_note"
                 },
                 {
-                  "name": "adm0_a3_is"
+                  "name": "adm0_a3_is",
+                  "alias": "adm0_a3_is"
                 },
                 {
-                  "name": "adm0_a3_us"
+                  "name": "adm0_a3_us",
+                  "alias": "adm0_a3_us"
                 },
                 {
-                  "name": "adm0_a3_un"
+                  "name": "adm0_a3_un",
+                  "alias": "adm0_a3_un"
                 },
                 {
-                  "name": "adm0_a3_wb"
+                  "name": "adm0_a3_wb",
+                  "alias": "adm0_a3_wb"
                 },
                 {
-                  "name": "continent"
+                  "name": "continent",
+                  "alias": "continent"
                 },
                 {
-                  "name": "region_un"
+                  "name": "region_un",
+                  "alias": "region_un"
                 },
                 {
-                  "name": "subregion"
+                  "name": "subregion",
+                  "alias": "subregion"
                 },
                 {
-                  "name": "region_wb"
+                  "name": "region_wb",
+                  "alias": "region_wb"
                 },
                 {
-                  "name": "name_len"
+                  "name": "name_len",
+                  "alias": "name_len"
                 },
                 {
-                  "name": "long_len"
+                  "name": "long_len",
+                  "alias": "long_len"
                 },
                 {
-                  "name": "abbrev_len"
+                  "name": "abbrev_len",
+                  "alias": "abbrev_len"
                 },
                 {
-                  "name": "tiny"
+                  "name": "tiny",
+                  "alias": "tiny"
                 },
                 {
-                  "name": "homepart"
+                  "name": "homepart",
+                  "alias": "homepart"
                 },
                 {
-                  "name": "ne_id"
+                  "name": "ne_id",
+                  "alias": "ne_id"
                 },
                 {
-                  "name": "wikidataid"
+                  "name": "wikidataid",
+                  "alias": "wikidataid"
                 },
                 {
-                  "name": "name_ar"
+                  "name": "name_ar",
+                  "alias": "name_ar"
                 },
                 {
-                  "name": "name_bn"
+                  "name": "name_bn",
+                  "alias": "name_bn"
                 },
                 {
-                  "name": "name_de"
+                  "name": "name_de",
+                  "alias": "name_de"
                 },
                 {
-                  "name": "name_en"
+                  "name": "name_en",
+                  "alias": "name_en"
                 },
                 {
-                  "name": "name_es"
+                  "name": "name_es",
+                  "alias": "name_es"
                 },
                 {
-                  "name": "name_fr"
+                  "name": "name_fr",
+                  "alias": "name_fr"
                 },
                 {
-                  "name": "name_el"
+                  "name": "name_el",
+                  "alias": "name_el"
                 },
                 {
-                  "name": "name_hi"
+                  "name": "name_hi",
+                  "alias": "name_hi"
                 },
                 {
-                  "name": "name_hu"
+                  "name": "name_hu",
+                  "alias": "name_hu"
                 },
                 {
-                  "name": "name_id"
+                  "name": "name_id",
+                  "alias": "name_id"
                 },
                 {
-                  "name": "name_it"
+                  "name": "name_it",
+                  "alias": "name_it"
                 },
                 {
-                  "name": "name_ja"
+                  "name": "name_ja",
+                  "alias": "name_ja"
                 },
                 {
-                  "name": "name_ko"
+                  "name": "name_ko",
+                  "alias": "name_ko"
                 },
                 {
-                  "name": "name_nl"
+                  "name": "name_nl",
+                  "alias": "name_nl"
                 },
                 {
-                  "name": "name_pl"
+                  "name": "name_pl",
+                  "alias": "name_pl"
                 },
                 {
-                  "name": "name_pt"
+                  "name": "name_pt",
+                  "alias": "name_pt"
                 },
                 {
-                  "name": "name_ru"
+                  "name": "name_ru",
+                  "alias": "name_ru"
                 },
                 {
-                  "name": "name_sv"
+                  "name": "name_sv",
+                  "alias": "name_sv"
                 },
                 {
-                  "name": "name_tr"
+                  "name": "name_tr",
+                  "alias": "name_tr"
                 },
                 {
-                  "name": "name_vi"
+                  "name": "name_vi",
+                  "alias": "name_vi"
                 },
                 {
-                  "name": "name_zh"
+                  "name": "name_zh",
+                  "alias": "name_zh"
                 },
                 {
-                  "name": "geometry"
+                  "name": "geometry",
+                  "alias": "geometry"
                 },
                 {
-                  "name": "maptip"
+                  "name": "maptip",
+                  "alias": "maptip"
                 }
               ],
               "display_field": "name"
@@ -689,106 +892,140 @@
               "title": "Geographic lines",
               "attributes": [
                 {
-                  "name": "ogc_fid"
+                  "name": "ogc_fid",
+                  "alias": "ogc_fid"
                 },
                 {
-                  "name": "scalerank"
+                  "name": "scalerank",
+                  "alias": "scalerank"
                 },
                 {
-                  "name": "name"
+                  "name": "name",
+                  "alias": "name"
                 },
                 {
-                  "name": "name_long"
+                  "name": "name_long",
+                  "alias": "name_long"
                 },
                 {
-                  "name": "abbrev"
+                  "name": "abbrev",
+                  "alias": "abbrev"
                 },
                 {
-                  "name": "note"
+                  "name": "note",
+                  "alias": "note"
                 },
                 {
-                  "name": "featurecla"
+                  "name": "featurecla",
+                  "alias": "featurecla"
                 },
                 {
-                  "name": "min_zoom"
+                  "name": "min_zoom",
+                  "alias": "min_zoom"
                 },
                 {
-                  "name": "wikidataid"
+                  "name": "wikidataid",
+                  "alias": "wikidataid"
                 },
                 {
-                  "name": "name_ar"
+                  "name": "name_ar",
+                  "alias": "name_ar"
                 },
                 {
-                  "name": "name_bn"
+                  "name": "name_bn",
+                  "alias": "name_bn"
                 },
                 {
-                  "name": "name_de"
+                  "name": "name_de",
+                  "alias": "name_de"
                 },
                 {
-                  "name": "name_en"
+                  "name": "name_en",
+                  "alias": "name_en"
                 },
                 {
-                  "name": "name_es"
+                  "name": "name_es",
+                  "alias": "name_es"
                 },
                 {
-                  "name": "name_fr"
+                  "name": "name_fr",
+                  "alias": "name_fr"
                 },
                 {
-                  "name": "name_el"
+                  "name": "name_el",
+                  "alias": "name_el"
                 },
                 {
-                  "name": "name_hi"
+                  "name": "name_hi",
+                  "alias": "name_hi"
                 },
                 {
-                  "name": "name_hu"
+                  "name": "name_hu",
+                  "alias": "name_hu"
                 },
                 {
-                  "name": "name_id"
+                  "name": "name_id",
+                  "alias": "name_id"
                 },
                 {
-                  "name": "name_it"
+                  "name": "name_it",
+                  "alias": "name_it"
                 },
                 {
-                  "name": "name_ja"
+                  "name": "name_ja",
+                  "alias": "name_ja"
                 },
                 {
-                  "name": "name_ko"
+                  "name": "name_ko",
+                  "alias": "name_ko"
                 },
                 {
-                  "name": "name_nl"
+                  "name": "name_nl",
+                  "alias": "name_nl"
                 },
                 {
-                  "name": "name_pl"
+                  "name": "name_pl",
+                  "alias": "name_pl"
                 },
                 {
-                  "name": "name_pt"
+                  "name": "name_pt",
+                  "alias": "name_pt"
                 },
                 {
-                  "name": "name_ru"
+                  "name": "name_ru",
+                  "alias": "name_ru"
                 },
                 {
-                  "name": "name_sv"
+                  "name": "name_sv",
+                  "alias": "name_sv"
                 },
                 {
-                  "name": "name_tr"
+                  "name": "name_tr",
+                  "alias": "name_tr"
                 },
                 {
-                  "name": "name_vi"
+                  "name": "name_vi",
+                  "alias": "name_vi"
                 },
                 {
-                  "name": "name_zh"
+                  "name": "name_zh",
+                  "alias": "name_zh"
                 },
                 {
-                  "name": "wdid_score"
+                  "name": "wdid_score",
+                  "alias": "wdid_score"
                 },
                 {
-                  "name": "ne_id"
+                  "name": "ne_id",
+                  "alias": "ne_id"
                 },
                 {
-                  "name": "geometry"
+                  "name": "geometry",
+                  "alias": "geometry"
                 },
                 {
-                  "name": "maptip"
+                  "name": "maptip",
+                  "alias": "maptip"
                 }
               ],
               "display_field": "name"
@@ -798,97 +1035,128 @@
               "title": "Country names",
               "attributes": [
                 {
-                  "name": "ogc_fid"
+                  "name": "ogc_fid",
+                  "alias": "ogc_fid"
                 },
                 {
-                  "name": "scalerank"
+                  "name": "scalerank",
+                  "alias": "scalerank"
                 },
                 {
-                  "name": "labelrank"
+                  "name": "labelrank",
+                  "alias": "labelrank"
                 },
                 {
-                  "name": "z_postal"
+                  "name": "z_postal",
+                  "alias": "z_postal"
                 },
                 {
-                  "name": "z_abbrev"
+                  "name": "z_abbrev",
+                  "alias": "z_abbrev"
                 },
                 {
-                  "name": "z_name"
+                  "name": "z_name",
+                  "alias": "z_name"
                 },
                 {
-                  "name": "z_admin"
+                  "name": "z_admin",
+                  "alias": "z_admin"
                 },
                 {
-                  "name": "featurecla"
+                  "name": "featurecla",
+                  "alias": "featurecla"
                 },
                 {
-                  "name": "sovereignt"
+                  "name": "sovereignt",
+                  "alias": "sovereignt"
                 },
                 {
-                  "name": "sov_a3"
+                  "name": "sov_a3",
+                  "alias": "sov_a3"
                 },
                 {
-                  "name": "adm0_dif"
+                  "name": "adm0_dif",
+                  "alias": "adm0_dif"
                 },
                 {
-                  "name": "level"
+                  "name": "level",
+                  "alias": "level"
                 },
                 {
-                  "name": "type"
+                  "name": "type",
+                  "alias": "type"
                 },
                 {
-                  "name": "admin"
+                  "name": "admin",
+                  "alias": "admin"
                 },
                 {
-                  "name": "adm0_a3"
+                  "name": "adm0_a3",
+                  "alias": "adm0_a3"
                 },
                 {
-                  "name": "geou_dif"
+                  "name": "geou_dif",
+                  "alias": "geou_dif"
                 },
                 {
-                  "name": "name"
+                  "name": "name",
+                  "alias": "name"
                 },
                 {
-                  "name": "abbrev"
+                  "name": "abbrev",
+                  "alias": "abbrev"
                 },
                 {
-                  "name": "postal"
+                  "name": "postal",
+                  "alias": "postal"
                 },
                 {
-                  "name": "name_forma"
+                  "name": "name_forma",
+                  "alias": "name_forma"
                 },
                 {
-                  "name": "terr_"
+                  "name": "terr_",
+                  "alias": "terr_"
                 },
                 {
-                  "name": "name_sort"
+                  "name": "name_sort",
+                  "alias": "name_sort"
                 },
                 {
-                  "name": "map_color"
+                  "name": "map_color",
+                  "alias": "map_color"
                 },
                 {
-                  "name": "pop_est"
+                  "name": "pop_est",
+                  "alias": "pop_est"
                 },
                 {
-                  "name": "gdp_md_est"
+                  "name": "gdp_md_est",
+                  "alias": "gdp_md_est"
                 },
                 {
-                  "name": "fips_10_"
+                  "name": "fips_10_",
+                  "alias": "fips_10_"
                 },
                 {
-                  "name": "iso_a2"
+                  "name": "iso_a2",
+                  "alias": "iso_a2"
                 },
                 {
-                  "name": "iso_a3"
+                  "name": "iso_a3",
+                  "alias": "iso_a3"
                 },
                 {
-                  "name": "iso_n3"
+                  "name": "iso_n3",
+                  "alias": "iso_n3"
                 },
                 {
-                  "name": "geometry"
+                  "name": "geometry",
+                  "alias": "geometry"
                 },
                 {
-                  "name": "maptip"
+                  "name": "maptip",
+                  "alias": "maptip"
                 }
               ],
               "display_field": "z_name"
@@ -898,55 +1166,72 @@
               "title": "States and Provinces",
               "attributes": [
                 {
-                  "name": "featurecla"
+                  "name": "featurecla",
+                  "alias": "featurecla"
                 },
                 {
-                  "name": "name"
+                  "name": "name",
+                  "alias": "name"
                 },
                 {
-                  "name": "adm0_a3"
+                  "name": "adm0_a3",
+                  "alias": "adm0_a3"
                 },
                 {
-                  "name": "adm0_name"
+                  "name": "adm0_name",
+                  "alias": "adm0_name"
                 },
                 {
-                  "name": "sov_a3"
+                  "name": "sov_a3",
+                  "alias": "sov_a3"
                 },
                 {
-                  "name": "name_l"
+                  "name": "name_l",
+                  "alias": "name_l"
                 },
                 {
-                  "name": "name_r"
+                  "name": "name_r",
+                  "alias": "name_r"
                 },
                 {
-                  "name": "name_alt_l"
+                  "name": "name_alt_l",
+                  "alias": "name_alt_l"
                 },
                 {
-                  "name": "name_alt_r"
+                  "name": "name_alt_r",
+                  "alias": "name_alt_r"
                 },
                 {
-                  "name": "name_loc_l"
+                  "name": "name_loc_l",
+                  "alias": "name_loc_l"
                 },
                 {
-                  "name": "name_loc_r"
+                  "name": "name_loc_r",
+                  "alias": "name_loc_r"
                 },
                 {
-                  "name": "name_len_l"
+                  "name": "name_len_l",
+                  "alias": "name_len_l"
                 },
                 {
-                  "name": "name_len_r"
+                  "name": "name_len_r",
+                  "alias": "name_len_r"
                 },
                 {
-                  "name": "note"
+                  "name": "note",
+                  "alias": "note"
                 },
                 {
-                  "name": "type"
+                  "name": "type",
+                  "alias": "type"
                 },
                 {
-                  "name": "geometry"
+                  "name": "geometry",
+                  "alias": "geometry"
                 },
                 {
-                  "name": "maptip"
+                  "name": "maptip",
+                  "alias": "maptip"
                 }
               ],
               "display_field": "name"
@@ -956,265 +1241,352 @@
               "title": "Countries",
               "attributes": [
                 {
-                  "name": "featurecla"
+                  "name": "featurecla",
+                  "alias": "featurecla"
                 },
                 {
-                  "name": "sovereignt"
+                  "name": "sovereignt",
+                  "alias": "sovereignt"
                 },
                 {
-                  "name": "sov_a3"
+                  "name": "sov_a3",
+                  "alias": "sov_a3"
                 },
                 {
-                  "name": "adm0_dif"
+                  "name": "adm0_dif",
+                  "alias": "adm0_dif"
                 },
                 {
-                  "name": "level"
+                  "name": "level",
+                  "alias": "level"
                 },
                 {
-                  "name": "type"
+                  "name": "type",
+                  "alias": "type"
                 },
                 {
-                  "name": "admin"
+                  "name": "admin",
+                  "alias": "admin"
                 },
                 {
-                  "name": "adm0_a3"
+                  "name": "adm0_a3",
+                  "alias": "adm0_a3"
                 },
                 {
-                  "name": "geou_dif"
+                  "name": "geou_dif",
+                  "alias": "geou_dif"
                 },
                 {
-                  "name": "geounit"
+                  "name": "geounit",
+                  "alias": "geounit"
                 },
                 {
-                  "name": "gu_a3"
+                  "name": "gu_a3",
+                  "alias": "gu_a3"
                 },
                 {
-                  "name": "su_dif"
+                  "name": "su_dif",
+                  "alias": "su_dif"
                 },
                 {
-                  "name": "subunit"
+                  "name": "subunit",
+                  "alias": "subunit"
                 },
                 {
-                  "name": "su_a3"
+                  "name": "su_a3",
+                  "alias": "su_a3"
                 },
                 {
-                  "name": "brk_diff"
+                  "name": "brk_diff",
+                  "alias": "brk_diff"
                 },
                 {
-                  "name": "name"
+                  "name": "name",
+                  "alias": "name"
                 },
                 {
-                  "name": "name_long"
+                  "name": "name_long",
+                  "alias": "name_long"
                 },
                 {
-                  "name": "brk_a3"
+                  "name": "brk_a3",
+                  "alias": "brk_a3"
                 },
                 {
-                  "name": "brk_name"
+                  "name": "brk_name",
+                  "alias": "brk_name"
                 },
                 {
-                  "name": "brk_group"
+                  "name": "brk_group",
+                  "alias": "brk_group"
                 },
                 {
-                  "name": "abbrev"
+                  "name": "abbrev",
+                  "alias": "abbrev"
                 },
                 {
-                  "name": "postal"
+                  "name": "postal",
+                  "alias": "postal"
                 },
                 {
-                  "name": "formal_en"
+                  "name": "formal_en",
+                  "alias": "formal_en"
                 },
                 {
-                  "name": "formal_fr"
+                  "name": "formal_fr",
+                  "alias": "formal_fr"
                 },
                 {
-                  "name": "name_ciawf"
+                  "name": "name_ciawf",
+                  "alias": "name_ciawf"
                 },
                 {
-                  "name": "note_adm0"
+                  "name": "note_adm0",
+                  "alias": "note_adm0"
                 },
                 {
-                  "name": "note_brk"
+                  "name": "note_brk",
+                  "alias": "note_brk"
                 },
                 {
-                  "name": "name_sort"
+                  "name": "name_sort",
+                  "alias": "name_sort"
                 },
                 {
-                  "name": "name_alt"
+                  "name": "name_alt",
+                  "alias": "name_alt"
                 },
                 {
-                  "name": "pop_est"
+                  "name": "pop_est",
+                  "alias": "pop_est"
                 },
                 {
-                  "name": "pop_rank"
+                  "name": "pop_rank",
+                  "alias": "pop_rank"
                 },
                 {
-                  "name": "gdp_md_est"
+                  "name": "gdp_md_est",
+                  "alias": "gdp_md_est"
                 },
                 {
-                  "name": "pop_year"
+                  "name": "pop_year",
+                  "alias": "pop_year"
                 },
                 {
-                  "name": "lastcensus"
+                  "name": "lastcensus",
+                  "alias": "lastcensus"
                 },
                 {
-                  "name": "gdp_year"
+                  "name": "gdp_year",
+                  "alias": "gdp_year"
                 },
                 {
-                  "name": "economy"
+                  "name": "economy",
+                  "alias": "economy"
                 },
                 {
-                  "name": "income_grp"
+                  "name": "income_grp",
+                  "alias": "income_grp"
                 },
                 {
-                  "name": "wikipedia"
+                  "name": "wikipedia",
+                  "alias": "wikipedia"
                 },
                 {
-                  "name": "fips_10_"
+                  "name": "fips_10_",
+                  "alias": "fips_10_"
                 },
                 {
-                  "name": "iso_a2"
+                  "name": "iso_a2",
+                  "alias": "iso_a2"
                 },
                 {
-                  "name": "iso_a3"
+                  "name": "iso_a3",
+                  "alias": "iso_a3"
                 },
                 {
-                  "name": "iso_a3_eh"
+                  "name": "iso_a3_eh",
+                  "alias": "iso_a3_eh"
                 },
                 {
-                  "name": "iso_n3"
+                  "name": "iso_n3",
+                  "alias": "iso_n3"
                 },
                 {
-                  "name": "un_a3"
+                  "name": "un_a3",
+                  "alias": "un_a3"
                 },
                 {
-                  "name": "wb_a2"
+                  "name": "wb_a2",
+                  "alias": "wb_a2"
                 },
                 {
-                  "name": "wb_a3"
+                  "name": "wb_a3",
+                  "alias": "wb_a3"
                 },
                 {
-                  "name": "woe_id"
+                  "name": "woe_id",
+                  "alias": "woe_id"
                 },
                 {
-                  "name": "woe_id_eh"
+                  "name": "woe_id_eh",
+                  "alias": "woe_id_eh"
                 },
                 {
-                  "name": "woe_note"
+                  "name": "woe_note",
+                  "alias": "woe_note"
                 },
                 {
-                  "name": "adm0_a3_is"
+                  "name": "adm0_a3_is",
+                  "alias": "adm0_a3_is"
                 },
                 {
-                  "name": "adm0_a3_us"
+                  "name": "adm0_a3_us",
+                  "alias": "adm0_a3_us"
                 },
                 {
-                  "name": "adm0_a3_un"
+                  "name": "adm0_a3_un",
+                  "alias": "adm0_a3_un"
                 },
                 {
-                  "name": "adm0_a3_wb"
+                  "name": "adm0_a3_wb",
+                  "alias": "adm0_a3_wb"
                 },
                 {
-                  "name": "continent"
+                  "name": "continent",
+                  "alias": "continent"
                 },
                 {
-                  "name": "region_un"
+                  "name": "region_un",
+                  "alias": "region_un"
                 },
                 {
-                  "name": "subregion"
+                  "name": "subregion",
+                  "alias": "subregion"
                 },
                 {
-                  "name": "region_wb"
+                  "name": "region_wb",
+                  "alias": "region_wb"
                 },
                 {
-                  "name": "name_len"
+                  "name": "name_len",
+                  "alias": "name_len"
                 },
                 {
-                  "name": "long_len"
+                  "name": "long_len",
+                  "alias": "long_len"
                 },
                 {
-                  "name": "abbrev_len"
+                  "name": "abbrev_len",
+                  "alias": "abbrev_len"
                 },
                 {
-                  "name": "tiny"
+                  "name": "tiny",
+                  "alias": "tiny"
                 },
                 {
-                  "name": "homepart"
+                  "name": "homepart",
+                  "alias": "homepart"
                 },
                 {
-                  "name": "ne_id"
+                  "name": "ne_id",
+                  "alias": "ne_id"
                 },
                 {
-                  "name": "wikidataid"
+                  "name": "wikidataid",
+                  "alias": "wikidataid"
                 },
                 {
-                  "name": "name_ar"
+                  "name": "name_ar",
+                  "alias": "name_ar"
                 },
                 {
-                  "name": "name_bn"
+                  "name": "name_bn",
+                  "alias": "name_bn"
                 },
                 {
-                  "name": "name_de"
+                  "name": "name_de",
+                  "alias": "name_de"
                 },
                 {
-                  "name": "name_en"
+                  "name": "name_en",
+                  "alias": "name_en"
                 },
                 {
-                  "name": "name_es"
+                  "name": "name_es",
+                  "alias": "name_es"
                 },
                 {
-                  "name": "name_fr"
+                  "name": "name_fr",
+                  "alias": "name_fr"
                 },
                 {
-                  "name": "name_el"
+                  "name": "name_el",
+                  "alias": "name_el"
                 },
                 {
-                  "name": "name_hi"
+                  "name": "name_hi",
+                  "alias": "name_hi"
                 },
                 {
-                  "name": "name_hu"
+                  "name": "name_hu",
+                  "alias": "name_hu"
                 },
                 {
-                  "name": "name_id"
+                  "name": "name_id",
+                  "alias": "name_id"
                 },
                 {
-                  "name": "name_it"
+                  "name": "name_it",
+                  "alias": "name_it"
                 },
                 {
-                  "name": "name_ja"
+                  "name": "name_ja",
+                  "alias": "name_ja"
                 },
                 {
-                  "name": "name_ko"
+                  "name": "name_ko",
+                  "alias": "name_ko"
                 },
                 {
-                  "name": "name_nl"
+                  "name": "name_nl",
+                  "alias": "name_nl"
                 },
                 {
-                  "name": "name_pl"
+                  "name": "name_pl",
+                  "alias": "name_pl"
                 },
                 {
-                  "name": "name_pt"
+                  "name": "name_pt",
+                  "alias": "name_pt"
                 },
                 {
-                  "name": "name_ru"
+                  "name": "name_ru",
+                  "alias": "name_ru"
                 },
                 {
-                  "name": "name_sv"
+                  "name": "name_sv",
+                  "alias": "name_sv"
                 },
                 {
-                  "name": "name_tr"
+                  "name": "name_tr",
+                  "alias": "name_tr"
                 },
                 {
-                  "name": "name_vi"
+                  "name": "name_vi",
+                  "alias": "name_vi"
                 },
                 {
-                  "name": "name_zh"
+                  "name": "name_zh",
+                  "alias": "name_zh"
                 },
                 {
-                  "name": "geometry"
+                  "name": "geometry",
+                  "alias": "geometry"
                 },
                 {
-                  "name": "maptip"
+                  "name": "maptip",
+                  "alias": "maptip"
                 }
               ],
               "display_field": "name"

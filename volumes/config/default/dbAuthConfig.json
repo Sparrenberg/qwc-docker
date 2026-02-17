@@ -3,5 +3,6 @@
   "service": "db-auth",
   "config": {
     "db_url": "postgresql:///?service=qwc_configdb"
-  }
+  },
+  "resources": {}
 }

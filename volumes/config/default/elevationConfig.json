@@ -3,5 +3,6 @@
   "service": "elevation",
   "config": {
     "elevation_dataset": "/vsicurl/https://data.sourcepole.com/srtm_1km_3857.tif"
-  }
+  },
+  "resources": {}
 }

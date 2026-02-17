@@ -18,11 +18,12 @@
             "name": "id",
             "data_type": "integer",
             "constraints": {
-              "min": -2147483648,
-              "max": 2147483647,
               "readOnly": true,
               "expression": "",
-              "hidden": true
+              "placeholder": "",
+              "hidden": true,
+              "min": -2147483648,
+              "max": 2147483647
             },
             "joinfield": null
           },
@@ -30,10 +31,12 @@
             "name": "name",
             "data_type": "character varying",
             "constraints": {
-              "maxlength": 32,
+              "readOnly": false,
               "required": false,
               "expression": "",
-              "multiline": false
+              "placeholder": "",
+              "multiline": false,
+              "maxlength": 32
             },
             "joinfield": null
           },
@@ -41,8 +44,10 @@
             "name": "description",
             "data_type": "text",
             "constraints": {
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
               "multiline": true
             },
             "joinfield": null
@@ -51,10 +56,12 @@
             "name": "num",
             "data_type": "integer",
             "constraints": {
-              "min": 0,
-              "max": 10000,
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
+              "min": 0,
+              "max": 10000,
               "step": 1,
               "prec": 0
             },
@@ -64,9 +71,10 @@
             "name": "value",
             "data_type": "double precision",
             "constraints": {
-              "pattern": "[0-9]+([\\.,][0-9]+)?",
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
               "multiline": false
             },
             "joinfield": null
@@ -75,10 +83,10 @@
             "name": "type",
             "data_type": "smallint",
             "constraints": {
-              "min": -32768,
-              "max": 32767,
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
               "values": [
                 {
                   "label": "Type A",
@@ -92,7 +100,9 @@
                   "label": "Type C",
                   "value": "2"
                 }
-              ]
+              ],
+              "min": -32768,
+              "max": 32767
             },
             "joinfield": null
           },
@@ -100,14 +110,16 @@
             "name": "amount",
             "data_type": "numeric",
             "constraints": {
-              "numeric_precision": 5,
-              "numeric_scale": 2,
-              "min": -999.99,
-              "max": 999.99,
-              "step": 0.01,
+              "readOnly": false,
               "required": false,
               "expression": "",
-              "multiline": false
+              "placeholder": "",
+              "multiline": false,
+              "numeric_precision": 5,
+              "numeric_scale": 2,
+              "step": 0.01,
+              "min": -999.99,
+              "max": 999.99
             },
             "joinfield": null
           },
@@ -115,8 +127,10 @@
             "name": "validated",
             "data_type": "boolean",
             "constraints": {
+              "readOnly": false,
               "required": false,
-              "expression": ""
+              "expression": "",
+              "placeholder": ""
             },
             "joinfield": null
           },
@@ -124,8 +138,10 @@
             "name": "datetime",
             "data_type": "timestamp without time zone",
             "constraints": {
+              "readOnly": false,
               "required": false,
-              "expression": ""
+              "expression": "",
+              "placeholder": ""
             },
             "joinfield": null
           }
@@ -149,11 +165,12 @@
             "name": "id",
             "data_type": "integer",
             "constraints": {
-              "min": -2147483648,
-              "max": 2147483647,
               "readOnly": true,
               "expression": "",
-              "hidden": true
+              "placeholder": "",
+              "hidden": true,
+              "min": -2147483648,
+              "max": 2147483647
             },
             "joinfield": null
           },
@@ -161,10 +178,12 @@
             "name": "name",
             "data_type": "character varying",
             "constraints": {
-              "maxlength": 32,
+              "readOnly": false,
               "required": false,
               "expression": "",
-              "multiline": false
+              "placeholder": "",
+              "multiline": false,
+              "maxlength": 32
             },
             "joinfield": null
           },
@@ -172,8 +191,10 @@
             "name": "description",
             "data_type": "text",
             "constraints": {
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
               "multiline": true
             },
             "joinfield": null
@@ -182,10 +203,12 @@
             "name": "num",
             "data_type": "integer",
             "constraints": {
-              "min": 0,
-              "max": 10000,
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
+              "min": 0,
+              "max": 10000,
               "step": 1,
               "prec": 0
             },
@@ -195,9 +218,10 @@
             "name": "value",
             "data_type": "double precision",
             "constraints": {
-              "pattern": "[0-9]+([\\.,][0-9]+)?",
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
               "multiline": false
             },
             "joinfield": null
@@ -206,10 +230,10 @@
             "name": "type",
             "data_type": "smallint",
             "constraints": {
-              "min": -32768,
-              "max": 32767,
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
               "values": [
                 {
                   "label": "Type A",
@@ -223,7 +247,9 @@
                   "label": "Type C",
                   "value": "2"
                 }
-              ]
+              ],
+              "min": -32768,
+              "max": 32767
             },
             "joinfield": null
           },
@@ -231,14 +257,16 @@
             "name": "amount",
             "data_type": "numeric",
             "constraints": {
-              "numeric_precision": 5,
-              "numeric_scale": 2,
-              "min": -999.99,
-              "max": 999.99,
-              "step": 0.01,
+              "readOnly": false,
               "required": false,
               "expression": "",
-              "multiline": false
+              "placeholder": "",
+              "multiline": false,
+              "numeric_precision": 5,
+              "numeric_scale": 2,
+              "step": 0.01,
+              "min": -999.99,
+              "max": 999.99
             },
             "joinfield": null
           },
@@ -246,8 +274,10 @@
             "name": "validated",
             "data_type": "boolean",
             "constraints": {
+              "readOnly": false,
               "required": false,
-              "expression": ""
+              "expression": "",
+              "placeholder": ""
             },
             "joinfield": null
           },
@@ -255,8 +285,10 @@
             "name": "datetime",
             "data_type": "timestamp without time zone",
             "constraints": {
+              "readOnly": false,
               "required": false,
-              "expression": ""
+              "expression": "",
+              "placeholder": ""
             },
             "joinfield": null
           }
@@ -280,11 +312,12 @@
             "name": "id",
             "data_type": "integer",
             "constraints": {
-              "min": -2147483648,
-              "max": 2147483647,
               "readOnly": true,
               "expression": "",
-              "hidden": true
+              "placeholder": "",
+              "hidden": true,
+              "min": -2147483648,
+              "max": 2147483647
             },
             "joinfield": null
           },
@@ -292,10 +325,12 @@
             "name": "name",
             "data_type": "character varying",
             "constraints": {
-              "maxlength": 32,
+              "readOnly": false,
               "required": false,
               "expression": "",
-              "multiline": false
+              "placeholder": "",
+              "multiline": false,
+              "maxlength": 32
             },
             "joinfield": null
           },
@@ -303,8 +338,10 @@
             "name": "description",
             "data_type": "text",
             "constraints": {
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
               "multiline": true
             },
             "joinfield": null
@@ -313,10 +350,12 @@
             "name": "num",
             "data_type": "integer",
             "constraints": {
-              "min": 0,
-              "max": 10000,
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
+              "min": 0,
+              "max": 10000,
               "step": 1,
               "prec": 0
             },
@@ -326,9 +365,10 @@
             "name": "value",
             "data_type": "double precision",
             "constraints": {
-              "pattern": "[0-9]+([\\.,][0-9]+)?",
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
               "multiline": false
             },
             "joinfield": null
@@ -337,10 +377,10 @@
             "name": "type",
             "data_type": "smallint",
             "constraints": {
-              "min": -32768,
-              "max": 32767,
+              "readOnly": false,
               "required": false,
               "expression": "",
+              "placeholder": "",
               "values": [
                 {
                   "label": "Type A",
@@ -354,7 +394,9 @@
                   "label": "Type C",
                   "value": "2"
                 }
-              ]
+              ],
+              "min": -32768,
+              "max": 32767
             },
             "joinfield": null
           },
@@ -362,14 +404,16 @@
             "name": "amount",
             "data_type": "numeric",
             "constraints": {
-              "numeric_precision": 5,
-              "numeric_scale": 2,
-              "min": -999.99,
-              "max": 999.99,
-              "step": 0.01,
+              "readOnly": false,
               "required": false,
               "expression": "",
-              "multiline": false
+              "placeholder": "",
+              "multiline": false,
+              "numeric_precision": 5,
+              "numeric_scale": 2,
+              "step": 0.01,
+              "min": -999.99,
+              "max": 999.99
             },
             "joinfield": null
           },
@@ -377,8 +421,10 @@
             "name": "validated",
             "data_type": "boolean",
             "constraints": {
+              "readOnly": false,
               "required": false,
-              "expression": ""
+              "expression": "",
+              "placeholder": ""
             },
             "joinfield": null
           },
@@ -386,8 +432,10 @@
             "name": "datetime",
             "data_type": "timestamp without time zone",
             "constraints": {
+              "readOnly": false,
               "required": false,
-              "expression": ""
+              "expression": "",
+              "placeholder": ""
             },
             "joinfield": null
           }

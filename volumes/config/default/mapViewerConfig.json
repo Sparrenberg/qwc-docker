@@ -18,27 +18,32 @@
   },
   "resources": {
     "qwc2_config": {
-      "restricted_viewer_tasks": [],
       "config": {
-        "omitUrlParameterUpdates": false,
-        "urlPositionFormat": "centerAndZoom",
-        "urlPositionCrs": "",
-        "preserveBackgroundOnThemeSwitch": true,
-        "preserveExtentOnThemeSwitch": true,
-        "preserveNonThemeLayersOnThemeSwitch": false,
         "allowAddingOtherThemes": true,
+        "allowFractionalZoom": false,
         "allowLayerTreeSeparators": false,
         "allowRemovingThemeLayers": true,
         "allowReorderingLayers": true,
-        "preventSplittingGroupsWhenReordering": false,
+        "availableLocales": {
+          "en-US": "English",
+          "de-CH": "Deutsch",
+          "fr-FR": "Français",
+          "it-IT": "Italiano"
+        },
         "globallyDisableDockableDialogs": false,
-        "searchThemes": true,
-        "allowFractionalZoom": false,
-        "localeAwareNumbers": false,
         "identifyTool": "Identify",
+        "localeAwareNumbers": false,
+        "omitUrlParameterUpdates": false,
+        "preserveBackgroundOnThemeSwitch": true,
+        "preserveExtentOnThemeSwitch": true,
+        "preserveNonThemeLayersOnThemeSwitch": false,
+        "preventSplittingGroupsWhenReordering": false,
+        "routingServiceUrl": "https://valhalla1.openstreetmap.de/",
+        "searchThemes": true,
+        "urlPositionFormat": "centerAndZoom",
+        "urlPositionCrs": "",
         "wmsDpi": 96,
         "wmsHidpi": false,
-        "qgisServerVersion": 3,
         "defaultFeatureStyle": {
           "strokeColor": [
             0,
@@ -228,6 +233,15 @@
               "name": "MapExport"
             },
             {
+              "name": "MapFilter",
+              "cfg": {
+                "allowCustomFilters": true,
+                "allowFilterByGeom": true,
+                "allowFilterByTime": true,
+                "position": 6
+              }
+            },
+            {
               "name": "MapInfoTooltip",
               "cfg": {
                 "elevationPrecision": 0,
@@ -250,6 +264,13 @@
               }
             },
             {
+              "name": "NewsPopup",
+              "cfg": {
+                "newsDocument": "https://qwc-services.github.io/master/release_notes/ChangeLog/",
+                "newsRev": "20250210"
+              }
+            },
+            {
               "name": "Print",
               "cfg": {
                 "inlinePrintOutput": true,
@@ -265,26 +286,11 @@
               }
             },
             {
+              "name": "Routing"
+            },
+            {
               "name": "Settings",
               "cfg": {
-                "languages": [
-                  {
-                    "title": "English",
-                    "value": "en-US"
-                  },
-                  {
-                    "title": "Deutsch",
-                    "value": "de-CH"
-                  },
-                  {
-                    "title": "Français",
-                    "value": "fr-FR"
-                  },
-                  {
-                    "title": "Italiano",
-                    "value": "it-IT"
-                  }
-                ],
                 "colorSchemes": [
                   {
                     "titleMsgId": "colorschemes.default",
@@ -327,6 +333,9 @@
             },
             {
               "name": "TimeManager",
+              "cfg": {
+                "defaultTimelineDisplay": "features"
+              },
               "mapClickAction": "identify"
             },
             {
@@ -362,10 +371,6 @@
                     "icon": "tools",
                     "subitems": [
                       {
-                        "key": "TimeManager",
-                        "icon": "clock"
-                      },
-                      {
                         "key": "Identify",
                         "icon": "identify_region",
                         "mode": "Region"
@@ -377,6 +382,10 @@
                       {
                         "key": "Redlining",
                         "icon": "draw"
+                      },
+                      {
+                        "key": "MapFilter",
+                        "icon": "filter"
                       },
                       {
                         "key": "Editing",
@@ -393,6 +402,14 @@
                       {
                         "key": "MapExport",
                         "icon": "rasterexport"
+                      },
+                      {
+                        "key": "TimeManager",
+                        "icon": "clock"
+                      },
+                      {
+                        "key": "Routing",
+                        "icon": "routing"
                       }
                     ]
                   },
@@ -520,28 +537,25 @@
         "items": [
           {
             "id": "qwc_demo",
+            "mapCrs": "EPSG:3857",
             "name": "qwc_demo",
             "title": "QWC Demo Theme",
-            "description": "",
-            "wmsOnly": false,
-            "wms_name": "qwc_demo",
             "url": "/ows/qwc_demo",
+            "wms_name": "qwc_demo",
+            "abstract": "This a demo project for the QGIS Web Client",
             "attribution": {
               "Title": "Demo attribution",
               "OnlineResource": "https://example.com/"
             },
-            "abstract": "This a demo project for the QGIS Web Client",
-            "keywords": "qwc, demo",
-            "onlineResource": "",
-            "contact": {
-              "person": "unknown",
-              "organization": "Sourcepole AG",
-              "position": null,
-              "phone": null,
-              "email": null
-            },
-            "mapCrs": "EPSG:3857",
-            "additionalMouseCrs": [],
+            "availableFormats": [
+              "image/jpeg",
+              "image/png",
+              "image/png; mode=16bit",
+              "image/png; mode=8bit",
+              "image/png; mode=1bit",
+              "application/dxf",
+              "application/pdf"
+            ],
             "bbox": {
               "crs": "EPSG:4326",
               "bounds": [
@@ -551,6 +565,575 @@
                 89.0
               ]
             },
+            "contact": {
+              "person": "unknown",
+              "organization": "Sourcepole AG",
+              "position": null,
+              "phone": null,
+              "email": null
+            },
+            "description": "",
+            "drawingOrder": [
+              "bluemarble_bg",
+              "osm_bg",
+              "countries",
+              "states_provinces",
+              "country_names",
+              "geographic_lines",
+              "edit_polygons",
+              "edit_lines",
+              "edit_points"
+            ],
+            "editConfig": {
+              "edit_lines": {
+                "layerName": "edit_lines",
+                "layerTitle": "Edit Lines",
+                "displayField": "name",
+                "editDataset": "qwc_demo.edit_lines",
+                "geomType": "LineString",
+                "primaryKey": "id",
+                "form": ":/forms/autogen/qwc_demo_edit_lines.ui?v=1771352401",
+                "reltables": [],
+                "fields": [
+                  {
+                    "id": "id",
+                    "name": "id",
+                    "type": "number",
+                    "data_type": "integer",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": true,
+                      "expression": "",
+                      "placeholder": "",
+                      "hidden": true,
+                      "min": -2147483648,
+                      "max": 2147483647
+                    }
+                  },
+                  {
+                    "id": "name",
+                    "name": "Name",
+                    "type": "text",
+                    "data_type": "character varying",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": false,
+                      "maxlength": 32
+                    }
+                  },
+                  {
+                    "id": "description",
+                    "name": "Description",
+                    "type": "text",
+                    "data_type": "text",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": true
+                    }
+                  },
+                  {
+                    "id": "num",
+                    "name": "Number",
+                    "type": "number",
+                    "data_type": "integer",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "min": 0,
+                      "max": 10000,
+                      "step": 1,
+                      "prec": 0
+                    }
+                  },
+                  {
+                    "id": "value",
+                    "name": "value",
+                    "type": "number",
+                    "data_type": "double precision",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": false
+                    }
+                  },
+                  {
+                    "id": "type",
+                    "name": "Type",
+                    "type": "list",
+                    "data_type": "smallint",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "values": [
+                        {
+                          "label": "Type A",
+                          "value": "0"
+                        },
+                        {
+                          "label": "Type B",
+                          "value": "1"
+                        },
+                        {
+                          "label": "Type C",
+                          "value": "2"
+                        }
+                      ],
+                      "min": -32768,
+                      "max": 32767
+                    }
+                  },
+                  {
+                    "id": "amount",
+                    "name": "amount",
+                    "type": "number",
+                    "data_type": "numeric",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": false,
+                      "numeric_precision": 5,
+                      "numeric_scale": 2,
+                      "step": 0.01,
+                      "min": -999.99,
+                      "max": 999.99
+                    }
+                  },
+                  {
+                    "id": "validated",
+                    "name": "Validated",
+                    "type": "boolean",
+                    "data_type": "boolean",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": ""
+                    }
+                  },
+                  {
+                    "id": "datetime",
+                    "name": "Date",
+                    "type": "date",
+                    "data_type": "timestamp without time zone",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": ""
+                    }
+                  }
+                ]
+              },
+              "edit_points": {
+                "layerName": "edit_points",
+                "layerTitle": "Edit Points",
+                "displayField": "name",
+                "editDataset": "qwc_demo.edit_points",
+                "geomType": "Point",
+                "primaryKey": "id",
+                "form": ":/forms/autogen/qwc_demo_edit_points.ui?v=1771352401",
+                "reltables": [],
+                "fields": [
+                  {
+                    "id": "id",
+                    "name": "id",
+                    "type": "number",
+                    "data_type": "integer",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": true,
+                      "expression": "",
+                      "placeholder": "",
+                      "hidden": true,
+                      "min": -2147483648,
+                      "max": 2147483647
+                    }
+                  },
+                  {
+                    "id": "name",
+                    "name": "Name",
+                    "type": "text",
+                    "data_type": "character varying",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": false,
+                      "maxlength": 32
+                    }
+                  },
+                  {
+                    "id": "description",
+                    "name": "Description",
+                    "type": "text",
+                    "data_type": "text",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": true
+                    }
+                  },
+                  {
+                    "id": "num",
+                    "name": "Number",
+                    "type": "number",
+                    "data_type": "integer",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "min": 0,
+                      "max": 10000,
+                      "step": 1,
+                      "prec": 0
+                    }
+                  },
+                  {
+                    "id": "value",
+                    "name": "value",
+                    "type": "number",
+                    "data_type": "double precision",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": false
+                    }
+                  },
+                  {
+                    "id": "type",
+                    "name": "Type",
+                    "type": "list",
+                    "data_type": "smallint",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "values": [
+                        {
+                          "label": "Type A",
+                          "value": "0"
+                        },
+                        {
+                          "label": "Type B",
+                          "value": "1"
+                        },
+                        {
+                          "label": "Type C",
+                          "value": "2"
+                        }
+                      ],
+                      "min": -32768,
+                      "max": 32767
+                    }
+                  },
+                  {
+                    "id": "amount",
+                    "name": "amount",
+                    "type": "number",
+                    "data_type": "numeric",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": false,
+                      "numeric_precision": 5,
+                      "numeric_scale": 2,
+                      "step": 0.01,
+                      "min": -999.99,
+                      "max": 999.99
+                    }
+                  },
+                  {
+                    "id": "validated",
+                    "name": "Validated",
+                    "type": "boolean",
+                    "data_type": "boolean",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": ""
+                    }
+                  },
+                  {
+                    "id": "datetime",
+                    "name": "Date",
+                    "type": "date",
+                    "data_type": "timestamp without time zone",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": ""
+                    }
+                  }
+                ]
+              },
+              "edit_polygons": {
+                "layerName": "edit_polygons",
+                "layerTitle": "Edit Polygons",
+                "displayField": "name",
+                "editDataset": "qwc_demo.edit_polygons",
+                "geomType": "Polygon",
+                "primaryKey": "id",
+                "form": ":/forms/autogen/qwc_demo_edit_polygons.ui?v=1771352401",
+                "reltables": [],
+                "fields": [
+                  {
+                    "id": "id",
+                    "name": "id",
+                    "type": "number",
+                    "data_type": "integer",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": true,
+                      "expression": "",
+                      "placeholder": "",
+                      "hidden": true,
+                      "min": -2147483648,
+                      "max": 2147483647
+                    }
+                  },
+                  {
+                    "id": "name",
+                    "name": "Name",
+                    "type": "text",
+                    "data_type": "character varying",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": false,
+                      "maxlength": 32
+                    }
+                  },
+                  {
+                    "id": "description",
+                    "name": "Description",
+                    "type": "text",
+                    "data_type": "text",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": true
+                    }
+                  },
+                  {
+                    "id": "num",
+                    "name": "Number",
+                    "type": "number",
+                    "data_type": "integer",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "min": 0,
+                      "max": 10000,
+                      "step": 1,
+                      "prec": 0
+                    }
+                  },
+                  {
+                    "id": "value",
+                    "name": "value",
+                    "type": "number",
+                    "data_type": "double precision",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": false
+                    }
+                  },
+                  {
+                    "id": "type",
+                    "name": "Type",
+                    "type": "list",
+                    "data_type": "smallint",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "values": [
+                        {
+                          "label": "Type A",
+                          "value": "0"
+                        },
+                        {
+                          "label": "Type B",
+                          "value": "1"
+                        },
+                        {
+                          "label": "Type C",
+                          "value": "2"
+                        }
+                      ],
+                      "min": -32768,
+                      "max": 32767
+                    }
+                  },
+                  {
+                    "id": "amount",
+                    "name": "amount",
+                    "type": "number",
+                    "data_type": "numeric",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": "",
+                      "multiline": false,
+                      "numeric_precision": 5,
+                      "numeric_scale": 2,
+                      "step": 0.01,
+                      "min": -999.99,
+                      "max": 999.99
+                    }
+                  },
+                  {
+                    "id": "validated",
+                    "name": "Validated",
+                    "type": "boolean",
+                    "data_type": "boolean",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": ""
+                    }
+                  },
+                  {
+                    "id": "datetime",
+                    "name": "Date",
+                    "type": "date",
+                    "data_type": "timestamp without time zone",
+                    "defaultValue": "",
+                    "filterExpression": null,
+                    "expression": null,
+                    "constraints": {
+                      "readOnly": false,
+                      "required": false,
+                      "expression": "",
+                      "placeholder": ""
+                    }
+                  }
+                ]
+              }
+            },
+            "expanded": true,
+            "externalLayers": [],
+            "infoFormats": [
+              "text/plain",
+              "text/html",
+              "text/xml",
+              "application/vnd.ogc.gml",
+              "application/vnd.ogc.gml/3.1.1",
+              "application/json",
+              "application/geo+json"
+            ],
             "initialBbox": {
               "crs": "EPSG:3857",
               "bounds": [
@@ -560,6 +1143,20 @@
                 8000000
               ]
             },
+            "keywords": "qwc, demo",
+            "onlineResource": "",
+            "searchProviders": [
+              "coordinates",
+              "nominatim",
+              {
+                "provider": "fulltext",
+                "params": {
+                  "default": [
+                    "ne_10m_admin_0_countries"
+                  ]
+                }
+              }
+            ],
             "sublayers": [
               {
                 "name": "edit_demo",
@@ -591,7 +1188,8 @@
                     "attribution": {
                       "Title": null,
                       "OnlineResource": null
-                    }
+                    },
+                    "refreshInterval": 0
                   },
                   {
                     "name": "edit_lines",
@@ -619,7 +1217,8 @@
                     "attribution": {
                       "Title": null,
                       "OnlineResource": null
-                    }
+                    },
+                    "refreshInterval": 0
                   },
                   {
                     "name": "edit_polygons",
@@ -647,7 +1246,8 @@
                     "attribution": {
                       "Title": null,
                       "OnlineResource": null
-                    }
+                    },
+                    "refreshInterval": 0
                   }
                 ],
                 "expanded": true,
@@ -680,7 +1280,8 @@
                 "attribution": {
                   "Title": null,
                   "OnlineResource": null
-                }
+                },
+                "refreshInterval": 0
               },
               {
                 "name": "country_names",
@@ -710,7 +1311,8 @@
                 "attribution": {
                   "Title": null,
                   "OnlineResource": null
-                }
+                },
+                "refreshInterval": 0
               },
               {
                 "name": "states_provinces",
@@ -740,7 +1342,8 @@
                 "attribution": {
                   "Title": null,
                   "OnlineResource": null
-                }
+                },
+                "refreshInterval": 0
               },
               {
                 "name": "countries",
@@ -769,36 +1372,16 @@
                   "Title": null,
                   "OnlineResource": null
                 },
-                "featureReport": "Country"
+                "featureReport": "Country",
+                "refreshInterval": 0
               }
             ],
-            "expanded": true,
-            "drawingOrder": [
-              "bluemarble_bg",
-              "osm_bg",
-              "countries",
-              "states_provinces",
-              "country_names",
-              "geographic_lines",
-              "edit_polygons",
-              "edit_lines",
-              "edit_points"
-            ],
-            "externalLayers": [],
-            "backgroundLayers": [
-              {
-                "name": "bluemarble",
-                "printLayer": "bluemarble_bg",
-                "visibility": true
-              },
-              {
-                "name": "mapnik",
-                "printLayer": "osm_bg"
-              }
-            ],
+            "translations": {},
+            "wmsOnly": false,
             "print": [
               {
                 "name": "A4 Landscape",
+                "title": "A4 Landscape",
                 "map": {
                   "name": "map0",
                   "x": 8.0,
@@ -806,13 +1389,16 @@
                   "width": 220.0,
                   "height": 190.0
                 },
+                "atlasCoverageLayer": "countries",
+                "atlas_pk": "ogc_fid",
                 "labels": [
                   "user_text"
                 ],
-                "default": false
+                "default": true
               },
               {
                 "name": "A3 Landscape",
+                "title": "A3 Landscape",
                 "map": {
                   "name": "map0",
                   "x": 8.0,
@@ -826,466 +1412,76 @@
                 "default": false
               }
             ],
-            "extraLegendParameters": "LAYERTITLE=FALSE&RULELABEL=FALSE",
-            "searchProviders": [
-              "coordinates",
-              "nominatim",
+            "visibilityPresets": {},
+            "additionalMouseCrs": [],
+            "backgroundLayers": [
               {
-                "provider": "fulltext",
-                "params": {
-                  "default": [
-                    "ne_10m_admin_0_countries"
-                  ]
-                }
+                "name": "bluemarble",
+                "printLayer": "bluemarble_bg",
+                "visibility": true
+              },
+              {
+                "name": "mapnik",
+                "printLayer": "osm_bg"
               }
             ],
-            "editConfig": {
-              "edit_lines": {
-                "layerName": "edit_lines",
-                "displayField": "name",
-                "editDataset": "qwc_demo.edit_lines",
-                "geomType": "LineString",
-                "form": ":/forms/autogen/qwc_demo_edit_lines.ui?v=1739480089",
+            "extraLegendParameters": "LAYERTITLE=FALSE",
+            "predefinedFilters": [
+              {
+                "id": "continent_filter",
+                "title": "Continent",
+                "filter": {
+                  "countries": [
+                    "continent",
+                    "=",
+                    "$continent$"
+                  ]
+                },
                 "fields": [
                   {
-                    "id": "id",
-                    "name": "id",
-                    "type": "number",
-                    "data_type": "number",
-                    "constraints": {
-                      "min": -2147483648,
-                      "max": 2147483647,
-                      "readOnly": true,
-                      "expression": "",
-                      "hidden": true
-                    }
-                  },
-                  {
-                    "id": "name",
-                    "name": "Name",
-                    "type": "text",
-                    "data_type": "text",
-                    "constraints": {
-                      "maxlength": 32,
-                      "required": false,
-                      "expression": "",
-                      "multiline": false
-                    }
-                  },
-                  {
-                    "id": "description",
-                    "name": "Description",
-                    "type": "text",
-                    "data_type": "text",
-                    "constraints": {
-                      "required": false,
-                      "expression": "",
-                      "multiline": true
-                    }
-                  },
-                  {
-                    "id": "num",
-                    "name": "Number",
-                    "type": "number",
-                    "data_type": "number",
-                    "constraints": {
-                      "min": 0,
-                      "max": 10000,
-                      "required": false,
-                      "expression": "",
-                      "step": 1,
-                      "prec": 0
-                    }
-                  },
-                  {
-                    "id": "value",
-                    "name": "value",
-                    "type": "text",
-                    "data_type": "text",
-                    "constraints": {
-                      "pattern": "[0-9]+([\\.,][0-9]+)?",
-                      "required": false,
-                      "expression": "",
-                      "multiline": false
-                    }
-                  },
-                  {
-                    "id": "type",
-                    "name": "Type",
-                    "type": "list",
-                    "data_type": "number",
-                    "constraints": {
-                      "min": -32768,
-                      "max": 32767,
-                      "required": false,
-                      "expression": "",
-                      "values": [
-                        {
-                          "label": "Type A",
-                          "value": "0"
-                        },
-                        {
-                          "label": "Type B",
-                          "value": "1"
-                        },
-                        {
-                          "label": "Type C",
-                          "value": "2"
-                        }
+                    "id": "continent",
+                    "title": "Name",
+                    "defaultValue": "",
+                    "inputConfig": {
+                      "type": "select",
+                      "options": [
+                        "Africa",
+                        "Asia",
+                        "Europe",
+                        "Oceania"
                       ]
-                    }
-                  },
-                  {
-                    "id": "amount",
-                    "name": "amount",
-                    "type": "number",
-                    "data_type": "number",
-                    "constraints": {
-                      "numeric_precision": 5,
-                      "numeric_scale": 2,
-                      "min": -999.99,
-                      "max": 999.99,
-                      "step": 0.01,
-                      "required": false,
-                      "expression": "",
-                      "multiline": false
-                    }
-                  },
-                  {
-                    "id": "validated",
-                    "name": "Validated",
-                    "type": "boolean",
-                    "data_type": "boolean",
-                    "constraints": {
-                      "required": false,
-                      "expression": ""
-                    }
-                  },
-                  {
-                    "id": "datetime",
-                    "name": "Date",
-                    "type": "date",
-                    "data_type": "date",
-                    "constraints": {
-                      "required": false,
-                      "expression": ""
-                    }
-                  }
-                ]
-              },
-              "edit_points": {
-                "layerName": "edit_points",
-                "displayField": "name",
-                "editDataset": "qwc_demo.edit_points",
-                "geomType": "Point",
-                "form": ":/forms/autogen/qwc_demo_edit_points.ui?v=1739480089",
-                "fields": [
-                  {
-                    "id": "id",
-                    "name": "id",
-                    "type": "number",
-                    "data_type": "number",
-                    "constraints": {
-                      "min": -2147483648,
-                      "max": 2147483647,
-                      "readOnly": true,
-                      "expression": "",
-                      "hidden": true
-                    }
-                  },
-                  {
-                    "id": "name",
-                    "name": "Name",
-                    "type": "text",
-                    "data_type": "text",
-                    "constraints": {
-                      "maxlength": 32,
-                      "required": false,
-                      "expression": "",
-                      "multiline": false
-                    }
-                  },
-                  {
-                    "id": "description",
-                    "name": "Description",
-                    "type": "text",
-                    "data_type": "text",
-                    "constraints": {
-                      "required": false,
-                      "expression": "",
-                      "multiline": true
-                    }
-                  },
-                  {
-                    "id": "num",
-                    "name": "Number",
-                    "type": "number",
-                    "data_type": "number",
-                    "constraints": {
-                      "min": 0,
-                      "max": 10000,
-                      "required": false,
-                      "expression": "",
-                      "step": 1,
-                      "prec": 0
-                    }
-                  },
-                  {
-                    "id": "value",
-                    "name": "value",
-                    "type": "text",
-                    "data_type": "text",
-                    "constraints": {
-                      "pattern": "[0-9]+([\\.,][0-9]+)?",
-                      "required": false,
-                      "expression": "",
-                      "multiline": false
-                    }
-                  },
-                  {
-                    "id": "type",
-                    "name": "Type",
-                    "type": "list",
-                    "data_type": "number",
-                    "constraints": {
-                      "min": -32768,
-                      "max": 32767,
-                      "required": false,
-                      "expression": "",
-                      "values": [
-                        {
-                          "label": "Type A",
-                          "value": "0"
-                        },
-                        {
-                          "label": "Type B",
-                          "value": "1"
-                        },
-                        {
-                          "label": "Type C",
-                          "value": "2"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "id": "amount",
-                    "name": "amount",
-                    "type": "number",
-                    "data_type": "number",
-                    "constraints": {
-                      "numeric_precision": 5,
-                      "numeric_scale": 2,
-                      "min": -999.99,
-                      "max": 999.99,
-                      "step": 0.01,
-                      "required": false,
-                      "expression": "",
-                      "multiline": false
-                    }
-                  },
-                  {
-                    "id": "validated",
-                    "name": "Validated",
-                    "type": "boolean",
-                    "data_type": "boolean",
-                    "constraints": {
-                      "required": false,
-                      "expression": ""
-                    }
-                  },
-                  {
-                    "id": "datetime",
-                    "name": "Date",
-                    "type": "date",
-                    "data_type": "date",
-                    "constraints": {
-                      "required": false,
-                      "expression": ""
-                    }
-                  }
-                ]
-              },
-              "edit_polygons": {
-                "layerName": "edit_polygons",
-                "displayField": "name",
-                "editDataset": "qwc_demo.edit_polygons",
-                "geomType": "Polygon",
-                "form": ":/forms/autogen/qwc_demo_edit_polygons.ui?v=1739480089",
-                "fields": [
-                  {
-                    "id": "id",
-                    "name": "id",
-                    "type": "number",
-                    "data_type": "number",
-                    "constraints": {
-                      "min": -2147483648,
-                      "max": 2147483647,
-                      "readOnly": true,
-                      "expression": "",
-                      "hidden": true
-                    }
-                  },
-                  {
-                    "id": "name",
-                    "name": "Name",
-                    "type": "text",
-                    "data_type": "text",
-                    "constraints": {
-                      "maxlength": 32,
-                      "required": false,
-                      "expression": "",
-                      "multiline": false
-                    }
-                  },
-                  {
-                    "id": "description",
-                    "name": "Description",
-                    "type": "text",
-                    "data_type": "text",
-                    "constraints": {
-                      "required": false,
-                      "expression": "",
-                      "multiline": true
-                    }
-                  },
-                  {
-                    "id": "num",
-                    "name": "Number",
-                    "type": "number",
-                    "data_type": "number",
-                    "constraints": {
-                      "min": 0,
-                      "max": 10000,
-                      "required": false,
-                      "expression": "",
-                      "step": 1,
-                      "prec": 0
-                    }
-                  },
-                  {
-                    "id": "value",
-                    "name": "value",
-                    "type": "text",
-                    "data_type": "text",
-                    "constraints": {
-                      "pattern": "[0-9]+([\\.,][0-9]+)?",
-                      "required": false,
-                      "expression": "",
-                      "multiline": false
-                    }
-                  },
-                  {
-                    "id": "type",
-                    "name": "Type",
-                    "type": "list",
-                    "data_type": "number",
-                    "constraints": {
-                      "min": -32768,
-                      "max": 32767,
-                      "required": false,
-                      "expression": "",
-                      "values": [
-                        {
-                          "label": "Type A",
-                          "value": "0"
-                        },
-                        {
-                          "label": "Type B",
-                          "value": "1"
-                        },
-                        {
-                          "label": "Type C",
-                          "value": "2"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "id": "amount",
-                    "name": "amount",
-                    "type": "number",
-                    "data_type": "number",
-                    "constraints": {
-                      "numeric_precision": 5,
-                      "numeric_scale": 2,
-                      "min": -999.99,
-                      "max": 999.99,
-                      "step": 0.01,
-                      "required": false,
-                      "expression": "",
-                      "multiline": false
-                    }
-                  },
-                  {
-                    "id": "validated",
-                    "name": "Validated",
-                    "type": "boolean",
-                    "data_type": "boolean",
-                    "constraints": {
-                      "required": false,
-                      "expression": ""
-                    }
-                  },
-                  {
-                    "id": "datetime",
-                    "name": "Date",
-                    "type": "date",
-                    "data_type": "date",
-                    "constraints": {
-                      "required": false,
-                      "expression": ""
                     }
                   }
                 ]
               }
+            ],
+            "printResolutions": [
+              100,
+              300
+            ],
+            "thumbnail": "img/mapthumbs/qwc_demo.jpg"
+          },
+          {
+            "id": "natural-earth-countries",
+            "mapCrs": "EPSG:3857",
+            "name": "natural-earth-countries",
+            "title": "Natural Earth Countries",
+            "url": "/ows/scan/natural-earth-countries",
+            "wms_name": "scan/natural-earth-countries",
+            "abstract": "",
+            "attribution": {
+              "Title": null,
+              "OnlineResource": null
             },
-            "thumbnail": "img/mapthumbs/qwc_demo.jpg",
             "availableFormats": [
               "image/jpeg",
               "image/png",
               "image/png; mode=16bit",
               "image/png; mode=8bit",
               "image/png; mode=1bit",
-              "application/dxf"
+              "application/dxf",
+              "application/pdf"
             ],
-            "infoFormats": [
-              "text/plain",
-              "text/html",
-              "text/xml",
-              "application/vnd.ogc.gml",
-              "application/vnd.ogc.gml/3.1.1",
-              "application/json",
-              "application/geo+json"
-            ],
-            "printResolutions": [
-              100,
-              300
-            ]
-          },
-          {
-            "id": "natural-earth-countries",
-            "name": "natural-earth-countries",
-            "title": "Natural Earth Countries",
-            "description": "",
-            "wmsOnly": false,
-            "wms_name": "scan/natural-earth-countries",
-            "url": "/ows/scan/natural-earth-countries",
-            "attribution": {
-              "Title": null,
-              "OnlineResource": null
-            },
-            "abstract": "",
-            "keywords": "",
-            "onlineResource": "",
-            "contact": {
-              "person": null,
-              "organization": null,
-              "position": null,
-              "phone": null,
-              "email": null
-            },
-            "mapCrs": "EPSG:3857",
             "bbox": {
               "crs": "EPSG:4326",
               "bounds": [
@@ -1295,6 +1491,32 @@
                 89.0
               ]
             },
+            "contact": {
+              "person": null,
+              "organization": null,
+              "position": null,
+              "phone": null,
+              "email": null
+            },
+            "description": "",
+            "drawingOrder": [
+              "countries",
+              "states_provinces",
+              "country_names",
+              "geographic_lines"
+            ],
+            "editConfig": {},
+            "expanded": true,
+            "externalLayers": [],
+            "infoFormats": [
+              "text/plain",
+              "text/html",
+              "text/xml",
+              "application/vnd.ogc.gml",
+              "application/vnd.ogc.gml/3.1.1",
+              "application/json",
+              "application/geo+json"
+            ],
             "initialBbox": {
               "crs": "EPSG:4326",
               "bounds": [
@@ -1304,6 +1526,11 @@
                 89.0
               ]
             },
+            "keywords": "",
+            "onlineResource": "",
+            "searchProviders": [
+              "coordinates"
+            ],
             "sublayers": [
               {
                 "name": "geographic_lines",
@@ -1331,7 +1558,8 @@
                 "attribution": {
                   "Title": null,
                   "OnlineResource": null
-                }
+                },
+                "refreshInterval": 0
               },
               {
                 "name": "country_names",
@@ -1361,7 +1589,8 @@
                 "attribution": {
                   "Title": null,
                   "OnlineResource": null
-                }
+                },
+                "refreshInterval": 0
               },
               {
                 "name": "states_provinces",
@@ -1391,7 +1620,8 @@
                 "attribution": {
                   "Title": null,
                   "OnlineResource": null
-                }
+                },
+                "refreshInterval": 0
               },
               {
                 "name": "countries",
@@ -1419,21 +1649,16 @@
                 "attribution": {
                   "Title": null,
                   "OnlineResource": null
-                }
+                },
+                "refreshInterval": 0
               }
             ],
-            "expanded": true,
-            "drawingOrder": [
-              "countries",
-              "states_provinces",
-              "country_names",
-              "geographic_lines"
-            ],
-            "externalLayers": [],
-            "backgroundLayers": [],
+            "translations": {},
+            "wmsOnly": false,
             "print": [
               {
                 "name": "A3 Landscape",
+                "title": "A3 Landscape",
                 "map": {
                   "name": "map0",
                   "x": 8.0,
@@ -1447,28 +1672,9 @@
                 "default": false
               }
             ],
-            "searchProviders": [
-              "coordinates"
-            ],
-            "editConfig": {},
-            "thumbnail": "img/mapthumbs/natural-earth-countries.png",
-            "availableFormats": [
-              "image/jpeg",
-              "image/png",
-              "image/png; mode=16bit",
-              "image/png; mode=8bit",
-              "image/png; mode=1bit",
-              "application/dxf"
-            ],
-            "infoFormats": [
-              "text/plain",
-              "text/html",
-              "text/xml",
-              "application/vnd.ogc.gml",
-              "application/vnd.ogc.gml/3.1.1",
-              "application/json",
-              "application/geo+json"
-            ]
+            "visibilityPresets": {},
+            "backgroundLayers": [],
+            "thumbnail": "img/mapthumbs/natural-earth-countries.png"
           }
         ],
         "subdirs": [],

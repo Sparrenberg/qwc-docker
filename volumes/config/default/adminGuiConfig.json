@@ -16,5 +16,6 @@
     "solr_tenant_dih": "dih_geodata_config",
     "totp_enabled": false,
     "user_info_fields": []
-  }
+  },
+  "resources": {}
 }

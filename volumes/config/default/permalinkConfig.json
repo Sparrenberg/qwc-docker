@@ -6,5 +6,6 @@
     "permalinks_table": "qwc_config.permalinks",
     "user_permalink_table": "qwc_config.user_permalinks",
     "user_bookmark_table": "qwc_config.user_bookmarks"
-  }
+  },
+  "resources": {}
 }
