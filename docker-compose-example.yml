@@ -16,7 +16,7 @@ x-qwc-service-variables: &qwc-service-variables
 services:
   
   qwc-postgis:
-    image: sourcepole/qwc-base-db:16 # 16 refers to the Postgres major version
+    image: sourcepole/qwc-base-db:18 # 16 refers to the Postgres major version
     environment:
       POSTGRES_PASSWORD: '' # TODO: Set your postgres password here!
     volumes:
@@ -30,7 +30,7 @@ services:
       interval: 10s
 
   qwc-config-db-migrate:
-    image: sourcepole/qwc-base-db-migrate:latest-2025-lts
+    image: sourcepole/qwc-base-db-migrate:latest-2026-lts
     volumes:
       - ./pg_service.conf:/tmp/pg_service.conf:ro
       # NOTE: Remove this line if you don't want/need the demo data
@@ -56,7 +56,7 @@ services:
       - ./volumes/print-layouts:/layouts:ro
 
   qwc-config-service:
-    image: sourcepole/qwc-config-generator:latest-2025-lts
+    image: sourcepole/qwc-config-generator:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       INPUT_CONFIG_PATH: '/srv/qwc_service/config-in'
@@ -74,7 +74,7 @@ services:
       - ./pg_service.conf:/srv/pg_service.conf:ro
 
   qwc-admin-gui:
-    image: sourcepole/qwc-admin-gui:latest-2025-lts
+    image: sourcepole/qwc-admin-gui:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       # Don't enable JWT CSRF protection for admin gui, it conflicts with CSRF protection offered by Flask-WTF
@@ -97,7 +97,7 @@ services:
       # - ./volumes/info-templates:/info_templates
 
   qwc-auth-service:
-    image: sourcepole/qwc-db-auth:latest-2025-lts
+    image: sourcepole/qwc-db-auth:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/auth'
@@ -117,7 +117,7 @@ services:
       - ./volumes/config:/srv/qwc_service/config:ro
 
   qwc-data-service:
-    image: sourcepole/qwc-data-service:latest-2025-lts
+    image: sourcepole/qwc-data-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/api/v1/data'
@@ -135,7 +135,7 @@ services:
   #   image: clamav/clamav:stable
 
   qwc-document-service:
-    image: sourcepole/qwc-document-service:latest-2025-lts
+    image: sourcepole/qwc-document-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/api/v1/document'
@@ -146,7 +146,7 @@ services:
       - ./volumes/config:/srv/qwc_service/config:ro
 
   qwc-elevation-service:
-    image: sourcepole/qwc-elevation-service:latest-2025-lts
+    image: sourcepole/qwc-elevation-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/api/v1/elevation'
@@ -154,7 +154,7 @@ services:
       - ./volumes/config:/srv/qwc_service/config:ro
 
   qwc-feature-info-service:
-    image: sourcepole/qwc-feature-info-service:latest-2025-lts
+    image: sourcepole/qwc-feature-info-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/api/v1/featureinfo'
@@ -164,7 +164,7 @@ services:
       - ./volumes/info-templates:/info_templates:ro
 
   qwc-fulltext-search-service:
-    image: sourcepole/qwc-fulltext-search-service:latest-2025-lts
+    image: sourcepole/qwc-fulltext-search-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/api/v2/search'
@@ -191,7 +191,7 @@ services:
       #- ./volumes/solr/security.json:/var/solr/data/security.json:ro
 
   qwc-legend-service:
-    image: sourcepole/qwc-legend-service:latest-2025-lts
+    image: sourcepole/qwc-legend-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/api/v1/legend'
@@ -200,7 +200,7 @@ services:
       - ./volumes/legends:/legends
 
   qwc-mapinfo-service:
-    image: sourcepole/qwc-mapinfo-service:latest-2025-lts
+    image: sourcepole/qwc-mapinfo-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/api/v1/mapinfo'
@@ -210,9 +210,9 @@ services:
 
   qwc-map-viewer:
     # Stock qwc2 app
-    image: sourcepole/qwc-map-viewer:latest-2025-lts
+    image: sourcepole/qwc-map-viewer:latest-2026-lts
     # Or with own viewer build placed in volumes/qwc2
-    # image: sourcepole/qwc-map-viewer-base:latest-2025-lts
+    # image: sourcepole/qwc-map-viewer-base:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/'
@@ -225,7 +225,7 @@ services:
       #- ./volumes/qwc2:/qwc2:ro
 
   qwc-ogc-service:
-    image: sourcepole/qwc-ogc-service:latest-2025-lts
+    image: sourcepole/qwc-ogc-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/ows'
@@ -233,7 +233,7 @@ services:
       - ./volumes/config:/srv/qwc_service/config:ro
 
   qwc-permalink-service:
-    image: sourcepole/qwc-permalink-service:latest-2025-lts
+    image: sourcepole/qwc-permalink-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/api/v1/permalink'
@@ -242,15 +242,34 @@ services:
       - ./volumes/config:/srv/qwc_service/config:ro
 
   qwc-print-service:
-    image: sourcepole/qwc-print-service:latest-2025-lts
+    image: sourcepole/qwc-print-service:latest-2026-lts
     environment:
       <<: *qwc-service-variables
       SERVICE_MOUNTPOINT: '/api/v1/print'
     volumes:
       - ./volumes/config:/srv/qwc_service/config:ro
 
+  # qwc-3d-tile-info-service:
+  #   image: docker.io/sourcepole/qwc-3d-tile-info-service:latest-2026-lts
+  #   environment:
+  #     <<: *qwc-service-variables
+  #     SERVICE_MOUNTPOINT: '/api/v1/tileinfo'
+  #   volumes:
+  #     - ./pg_service.conf:/srv/pg_service.conf:ro
+  #     - ./volumes/config:/srv/qwc_service/config:ro
+  #     - ./volumes/qgs-resources:/data:ro
+  #
+  # qwc-oblique-imagery-service:
+  #   image: docker.io/sourcepole/qwc-oblique-imagery-service:latest-2026-lts
+  #   environment:
+  #     <<: *qwc-service-variables
+  #     SERVICE_MOUNTPOINT: '/api/v1/oblique-imagery'
+  #   volumes:
+  #     - ./volumes/config:/srv/qwc_service/config:ro
+  #     - ./volumes/oblique-images:/images:ro
+
   # qwc-registration-gui:
-  #   image: sourcepole/qwc-registration-gui:latest-2025-lts
+  #   image: sourcepole/qwc-registration-gui:latest-2026-lts
   #   environment:
   #     <<: *qwc-service-variables
   #     SERVICE_MOUNTPOINT: '/registration'
@@ -262,7 +281,7 @@ services:
   #     - ./pg_service.conf:/srv/pg_service.conf:ro
 
   qwc-api-gateway:
-    image: nginx:1.27
+    image: nginx:1.29
     ports:
       # NOTE: The port the qwc application runs on. You can choose another port instead of 8088.
       - "8088:80"
@@ -285,4 +304,6 @@ services:
       - qwc-ogc-service
       - qwc-permalink-service
       - qwc-print-service
+      # - qwc-3d-tile-info-service
+      # - qwc-oblique-imagery-service
       #- qwc-registration-gui
